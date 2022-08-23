@@ -1,24 +1,24 @@
-from django.contrib import admin
+# from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
 from rest_framework.routers import DefaultRouter
 
-# from admin.views import UserViewSet
-# from info.views import ProfileViewSet
-# from projects.views import ProjectViewSet
-# from skills.views import SkillViewSet
+from admin.views import UserViewSet
+from info.views import ProfileViewSet
+from projects.views import ProjectViewSet
+from skills.views import SkillViewSet
 
 
 router = DefaultRouter()
-# router.register('users', UserViewSet)
-# router.register('profiles', ProfileViewSet)
-# router.register('skills', SkillViewSet, basename='skill')
-# router.register('projects', ProjectViewSet)
+router.register('users', UserViewSet)
+router.register('profiles', ProfileViewSet)
+router.register('projects', ProjectViewSet)
+router.register('skills', SkillViewSet, basename='skill')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api/admin/', include('admin.urls')),
     path('', include('frontend.urls')),

@@ -18,14 +18,14 @@ export default function Nav() {
           </NavLink>
         </h3>
       </div>
-      {/* <div className="nav-item">
+      <div className="nav-item">
         <h3>
           <NavLink to={"/projects"} className="nav-link">
             My Projects
           </NavLink>
         </h3>
       </div>
-      <div className="nav-item">
+      {/* <div className="nav-item">
         <h3>
           <NavLink to={"/contact"} className="nav-link">
             Contact Me

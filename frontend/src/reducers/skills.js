@@ -1,26 +1,24 @@
-import { GET_PROFILE_SUCCESS, GET_PROFILE_FAIL } from "../types";
+import { GET_SKILLS_SUCCESS, GET_SKILLS_FAIL } from "../types";
 
 const initialState = {
   loading: true,
   payload: {
-    full_name: "",
-    job_title: "",
-    phone: "",
-    email: "",
-    image: "",
+    id: 0,
+    name: "",
+    value: "",
   },
 };
 
-export default function profileReducer(state = initialState, action) {
+export default function skillsReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case GET_PROFILE_SUCCESS:
+    case GET_SKILLS_SUCCESS:
       return {
         ...state,
         loading: false,
         payload,
       };
-    case GET_PROFILE_FAIL:
+    case GET_SKILLS_FAIL:
       return {
         ...state,
         loading: false,

@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function List(props) {
+export default function List({ projects }) {
   return (
     <ul>
-      {props.projects.map((project) => {
+      {projects.map((project) => {
         return (
           <li key={project.id}>
             <h3>{project.name}</h3>

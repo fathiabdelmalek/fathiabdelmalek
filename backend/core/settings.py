@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'info.apps.InfoConfig',
     'projects.apps.ProjectsConfig',
     'skills.apps.SkillsConfig',
+    'contact.apps.ContactConfig',
     'frontend',
     # third party
     'rest_framework',
@@ -171,5 +172,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'fathiabdelmalek0666006253@gmail.com'
-EMAIL_HOST_PASSWORD = 'Fasoft_CJPP@2001'
+EMAIL_HOST_USER = 'abdelmalek.fathi.2001@gmail.com'
+EMAIL_HOST_PASSWORD = 'xufzelsfolujiodd'

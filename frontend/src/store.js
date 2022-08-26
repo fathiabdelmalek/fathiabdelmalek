@@ -5,7 +5,7 @@ import profileReducer from "./reducers/profile";
 import skillsReducer from "./reducers/skills";
 import projectsReducer from "./reducers/projects";
 // import projectReducer from "./reducers/project";
-// import contactReducer from "./reducers/contact";
+import contactReducer from "./reducers/contact";
 
 const middleware = [thunk];
 
@@ -14,7 +14,7 @@ const reducer = combineReducers({
   skills: skillsReducer,
   projects: projectsReducer,
   // project: projectReducer,
-  // contact: contactReducer,
+  contact: contactReducer,
 });
 
 export default createStore(

@@ -4,8 +4,9 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import profileReducer from "./reducers/profile";
 import skillsReducer from "./reducers/skills";
 import projectsReducer from "./reducers/projects";
-// import projectReducer from "./reducers/project";
+import projectReducer from "./reducers/project";
 import contactReducer from "./reducers/contact";
+import authReducer from "./reducers/auth";
 
 const middleware = [thunk];
 
@@ -13,8 +14,9 @@ const reducer = combineReducers({
   profile: profileReducer,
   skills: skillsReducer,
   projects: projectsReducer,
-  // project: projectReducer,
+  project: projectReducer,
   contact: contactReducer,
+  auth: authReducer,
 });
 
 export default createStore(

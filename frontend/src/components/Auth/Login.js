@@ -26,9 +26,15 @@ export default function Login({ isAuthenticated }) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    dispatch(login(formData.email, formData.password));
-    navigate("/", { replace: true });
-    // window.location.reload();
+    await dispatch(login(formData.email, formData.password)).then(() => {
+      if (isAuthenticated) {
+        console.log("login success");
+        navigate("/", { replace: true });
+        // window.location.reload();
+      } else {
+        console.log("login failed");
+      }
+    });
   };
 
   return (

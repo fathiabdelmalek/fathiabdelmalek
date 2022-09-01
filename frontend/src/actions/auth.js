@@ -15,24 +15,32 @@ export const checkAuthenticated = () => async (dispatch) => {
       if (res.data.error || res.data.isAuthenticated === "error") {
         dispatch({
           type: AUTHENTICATED_FAIL,
-          payload: false,
+          payload: {
+            isAuthenticated: false,
+          },
         });
       } else if (res.data.isAuthenticated === "Yes") {
         dispatch({
           type: AUTHENTICATED_SUCCESS,
-          payload: true,
+          payload: {
+            isAuthenticated: true,
+          },
         });
       } else {
         dispatch({
           type: AUTHENTICATED_FAIL,
-          payload: false,
+          payload: {
+            isAuthenticated: false,
+          },
         });
       }
     });
   } catch (err) {
     dispatch({
       type: AUTHENTICATED_FAIL,
-      payload: false,
+      payload: {
+        isAuthenticated: false,
+      },
     });
   }
 };
@@ -52,13 +60,24 @@ export const login = (email, password) => async (dispatch) => {
         dispatch({
           type: LOGIN_SUCCESS,
         });
-      } else {
+      } else if (res.data.email_error) {
         dispatch({
           type: LOGIN_FAIL,
+          payload: {
+            email_error: res.data.email_error,
+          },
+        });
+      } else if (res.data.password_error) {
+        dispatch({
+          type: LOGIN_FAIL,
+          payload: {
+            password_error: res.data.password_error,
+          },
         });
       }
     });
   } catch (err) {
+    console.log(err);
     dispatch({
       type: LOGIN_FAIL,
     });

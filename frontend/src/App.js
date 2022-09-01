@@ -16,11 +16,11 @@ import { checkAuthenticated } from "./actions/auth";
 export default function App() {
   const dispatch = useDispatch();
   dispatch(checkAuthenticated());
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const auth = useSelector((state) => state.auth);
 
   return (
     <BrowserRouter>
-      <Nav isAuthenticated={isAuthenticated} />
+      <Nav isAuthenticated={auth.payload.isAuthenticated} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,11 +32,17 @@ export default function App() {
           {/* Authentication */}
           <Route
             path={"/login"}
-            element={<Login isAuthenticated={isAuthenticated} />}
+            element={
+              <Login
+                isAuthenticated={auth.payload.isAuthenticated}
+                email_error={auth.payload.email_error}
+                password_error={auth.payload.password_error}
+              />
+            }
           />
           <Route
             path={"/logout"}
-            element={<Logout isAuthenticated={isAuthenticated} />}
+            element={<Logout isAuthenticated={auth.payload.isAuthenticated} />}
           />
         </Routes>
       </main>

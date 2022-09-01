@@ -45,19 +45,20 @@ class LoginView(views.APIView):
     def post(self, request, format=None):
         try:
             if not request.data['email']:
-                return Response({_('email_error'): _("You must enter the email")}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({_('email_error'): _("You must enter the email")})
             if not request.data['password']:
-                return Response({_('password_error'): _("You must enter the password")},
-                                status=status.HTTP_400_BAD_REQUEST)
+                return Response({_('password_error'): _("You must enter the password")})
             email = request.data['email']
             password = request.data['password']
-            user = User.objects.filter(email=email)[0]
-            if user.check_password(password):
-                auth.login(request, user)
-                return Response({_('success'): _("Login successfully")}, status=status.HTTP_200_OK)
-            return Response({_('password_error'): _("Incorrect password")}, status=status.HTTP_400_BAD_REQUEST)
+            if User.objects.filter(email=email):
+                user = User.objects.filter(email=email)[0]
+                if user.check_password(password):
+                    auth.login(request, user)
+                    return Response({_('success'): _("Login successfully")}, status=status.HTTP_200_OK)
+                return Response({_('password_error'): _("Incorrect password")})
+            return Response({_('email_error'): _("Incorrect email")})
         except Exception as e:
-            return Response({_('error'): _(f"Something went wrong when loging in\n") + e})
+            return Response({_('error'): _(f"Something went wrong when logging in\n") + e})
 
 
 class LogoutView(views.APIView):

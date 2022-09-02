@@ -8,8 +8,8 @@ import {
 } from "../types";
 
 const initialState = {
+  isAuthenticated: false,
   payload: {
-    isAuthenticated: false,
     email_error: "",
     password_error: "",
   },
@@ -28,19 +28,14 @@ export default function authReducer(state = initialState, action) {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        payload: {
-          isAuthenticated: true,
-        },
+        isAuthenticated: true,
       };
     case LOGOUT_SUCCESS:
       return {
         ...state,
-        payload: {
-          isAuthenticated: false,
-        },
+        isAuthenticated: false,
       };
     case LOGIN_FAIL:
-      console.log(payload);
       return {
         ...state,
         payload,

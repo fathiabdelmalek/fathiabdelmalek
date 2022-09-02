@@ -12,14 +12,7 @@ import Cookie from "js-cookie";
 export const checkAuthenticated = () => async (dispatch) => {
   try {
     instance.get(`admin/is-authenticated/`).then((res) => {
-      if (res.data.error || res.data.isAuthenticated === "error") {
-        dispatch({
-          type: AUTHENTICATED_FAIL,
-          payload: {
-            isAuthenticated: false,
-          },
-        });
-      } else if (res.data.isAuthenticated === "Yes") {
+      if (res.data.isAuthenticated === "Yes") {
         dispatch({
           type: AUTHENTICATED_SUCCESS,
           payload: {
@@ -55,29 +48,30 @@ export const login = (email, password) => async (dispatch) => {
   };
   const body = JSON.stringify({ email, password });
   try {
-    instance.post(`admin/login/`, body, config).then((res) => {
-      if (res.data.success) {
-        dispatch({
-          type: LOGIN_SUCCESS,
-        });
-      } else if (res.data.email_error) {
-        dispatch({
-          type: LOGIN_FAIL,
-          payload: {
-            email_error: res.data.email_error,
-          },
-        });
-      } else if (res.data.password_error) {
-        dispatch({
-          type: LOGIN_FAIL,
-          payload: {
-            password_error: res.data.password_error,
-          },
-        });
-      }
-    });
+    const res = await instance.post(`admin/login/`, body, config);
+    if (res.data.success) {
+      dispatch({
+        type: LOGIN_SUCCESS,
+      });
+    } else if (res.data.email_error) {
+      dispatch({
+        type: LOGIN_FAIL,
+        payload: {
+          email_error: res.data.email_error,
+          password_error: "",
+        },
+      });
+    } else if (res.data.password_error) {
+      dispatch({
+        type: LOGIN_FAIL,
+        payload: {
+          email_error: "",
+          password_error: res.data.password_error,
+        },
+      });
+    }
+    return res.data;
   } catch (err) {
-    console.log(err);
     dispatch({
       type: LOGIN_FAIL,
     });

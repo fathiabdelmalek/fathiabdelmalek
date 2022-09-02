@@ -3,14 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../actions/auth";
 import CSRFToken from "../CSRFToken";
-import instance from "../../axios";
-import Cookie from "js-cookie";
 
-export default function Login({
-  isAuthenticated,
-  email_error,
-  password_error,
-}) {
+export default function Login({ isAuthenticated }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const initialFormData = Object.freeze({
@@ -34,50 +28,19 @@ export default function Login({
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // try {
-    //   await dispatch(login(formData.email, formData.password)).then(() => {
-    //     if (isAuthenticated) {
-    //       console.log("login success");
-    //       navigate("/", { replace: true });
-    //       // window.location.reload();
-    //     } else {
-    //       console.log("login failed");
-    //     }
-    //   });
-    // } catch (err) {
-    //   console.log(err);
-    // }
-    const headers = {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "X-CSRFToken": Cookie.get("csrftoken"),
-      },
-    };
-    const body = JSON.stringify({
-      email: formData.email,
-      password: formData.password,
-    });
     try {
-      await instance
-        .post(`admin/login/`, body, headers)
-        .then((res) => {
-          if (res.data.success) {
-            navigate("/", { replace: true });
-            // window.location.reload();
-          } else if (res.data.email_error) {
-            console.log(res.data.email_error);
-            setEmailError(res.data.email_error);
-          } else if (res.data.password_error) {
-            console.log(res.data.password_error);
-            setPasswordError(res.data.password_error);
-          } else {
-            console.log(res.data);
-          }
-        })
-        .catch((err) => console.log(err));
-    } catch (er) {
-      console.log(er);
+      const res = await dispatch(login(formData.email, formData.password));
+      if (res.success) {
+        navigate("/", { replace: true });
+      } else if (res.email_error) {
+        setEmailError(res.email_error);
+        setPasswordError("");
+      } else if (res.password_error) {
+        setEmailError("");
+        setPasswordError(res.password_error);
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 

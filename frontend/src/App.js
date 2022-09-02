@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Nav from "./components/Nav";
@@ -15,12 +15,15 @@ import { checkAuthenticated } from "./actions/auth";
 
 export default function App() {
   const dispatch = useDispatch();
-  dispatch(checkAuthenticated());
-  const auth = useSelector((state) => state.auth);
+  const { isAuthenticated } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    dispatch(checkAuthenticated());
+  }, []);
 
   return (
     <BrowserRouter>
-      <Nav isAuthenticated={auth.payload.isAuthenticated} />
+      <Nav isAuthenticated={isAuthenticated} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,17 +35,11 @@ export default function App() {
           {/* Authentication */}
           <Route
             path={"/login"}
-            element={
-              <Login
-                isAuthenticated={auth.payload.isAuthenticated}
-                email_error={auth.payload.email_error}
-                password_error={auth.payload.password_error}
-              />
-            }
+            element={<Login isAuthenticated={isAuthenticated} />}
           />
           <Route
             path={"/logout"}
-            element={<Logout isAuthenticated={auth.payload.isAuthenticated} />}
+            element={<Logout isAuthenticated={isAuthenticated} />}
           />
         </Routes>
       </main>

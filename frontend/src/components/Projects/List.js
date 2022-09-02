@@ -1,12 +1,13 @@
 import React from "react";
+import {NavLink} from "react-router-dom";
 
-export default function List(props) {
+export default function List({ projects }) {
   return (
     <ul>
-      {props.projects.map((project) => {
+      {projects.map((project) => {
         return (
           <li key={project.id}>
-            <h3>{project.name}</h3>
+            <NavLink to={`/projects/${project.id}`} className="id"><h3>{project.name}</h3></NavLink>
             <span>{project.likes}</span>
             <p>{project.description}</p>
           </li>

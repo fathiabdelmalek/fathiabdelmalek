@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function List(props) {
+export default function List({ skills }) {
   return (
     <ul>
-      {props.skills.map((skill) => {
+      {skills.map((skill) => {
         return (
           <li key={skill.id}>
             <p>{skill.name}</p>

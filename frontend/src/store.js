@@ -7,6 +7,7 @@ import projectsReducer from "./reducers/projects";
 import projectReducer from "./reducers/project";
 import contactReducer from "./reducers/contact";
 import authReducer from "./reducers/auth";
+import settingsReducer from "./reducers/settings";
 
 const middleware = [thunk];
 
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   project: projectReducer,
   contact: contactReducer,
   auth: authReducer,
+  settings: settingsReducer,
 });
 
 export default createStore(

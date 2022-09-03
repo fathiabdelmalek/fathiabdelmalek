@@ -12,6 +12,7 @@ import Project from "./components/Project";
 import Login from "./components/Auth/Login";
 import Logout from "./components/Auth/Logout";
 import { checkAuthenticated } from "./actions/auth";
+import SkillsSettings from "./components/Settings/Skills";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -41,6 +42,8 @@ export default function App() {
             path={"/logout"}
             element={<Logout isAuthenticated={isAuthenticated} />}
           />
+          {/* Settings */}
+          <Route path="/settings/skills" element={<SkillsSettings />} />
         </Routes>
       </main>
       <Footer />

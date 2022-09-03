@@ -14,6 +14,7 @@ import {
   SKILL_DELETE_SUCCESS,
   SKILL_DELETE_FAIL,
 } from "../types";
+import instance from "../axios";
 
 export const editProfile =
   (full_name, job_title, phone, email, image = null) =>
@@ -28,9 +29,3 @@ export const editProject =
   async (dispatch) => {};
 
 export const deleteProject = (id) => async (dispatch) => {};
-
-export const createSkill = (name, value) => async (dispatch) => {};
-
-export const editSkill = (id, name, value) => async (dispatch) => {};
-
-export const deleteSkill = (id) => async (dispatch) => {};

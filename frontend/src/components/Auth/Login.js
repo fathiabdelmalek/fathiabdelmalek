@@ -19,13 +19,6 @@ export default function Login({ isAuthenticated }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      console.log("you are already logged in");
-      navigate("/", { replace: true });
-    }
-  });
-
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -43,6 +36,13 @@ export default function Login({ isAuthenticated }) {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      console.log("you are already logged in");
+      navigate("/", { replace: true });
+    }
+  });
 
   return (
     <div>

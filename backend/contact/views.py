@@ -1,7 +1,6 @@
 from django.utils.translation import gettext as _
 from django.core.mail import send_mail
 
-from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
@@ -16,9 +15,9 @@ class MessageViewSet(ModelViewSet):
     def create(self, request, *args, **kwargs):
         try:
             if not request.data['email']:
-                return Response({_('email_error'): _("You must enter the email")}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({_('email_error'): _("You must enter the email")})
             if not request.data['body']:
-                return Response({_('message_error'): _("You should enter message body")}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({_('message_error'): _("You should enter message body")})
             serializer = self.get_serializer(data=self.request.data)
             if serializer.is_valid():
                 return self.perform_create(serializer)
@@ -34,4 +33,4 @@ class MessageViewSet(ModelViewSet):
             message.email,
             ['abdelmalek.fathi.2001@gmail.com']
         )
-        return Response({_('success'): _("Message sent successfully")}, status=status.HTTP_200_OK)
+        return Response({_('success'): _("Message sent successfully")})

@@ -38,6 +38,16 @@ export default function skillsReducer(state = initialState, action) {
         payload: [...state.payload, payload],
       };
     case SKILL_EDIT_SUCCESS:
+      const updatedSkills = state.payload.map((item) => {
+        if (item.id === action.payload.id) {
+          return { ...item, ...action.payload };
+        }
+        return item;
+      });
+      return {
+        ...state,
+        payload: updatedSkills,
+      };
     case SKILL_DELETE_SUCCESS:
       return {
         ...state,

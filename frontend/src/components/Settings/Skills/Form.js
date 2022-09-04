@@ -9,6 +9,8 @@ export default function Form() {
     value: "",
   });
   const [formData, setFormData] = useState(initialFormData);
+  const [nameError, setNameError] = useState("");
+  const [valueError, setValueError] = useState("");
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,8 +19,16 @@ export default function Form() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      dispatch(createSkill(formData.name, formData.value));
-      setFormData({ name: "", value: "" });
+      const res = await dispatch(createSkill(formData.name, formData.value));
+      if (res.success) {
+        setFormData({ name: "", value: "" });
+      } else if (res.name_error) {
+        setNameError(res.name_error);
+        setValueError("");
+      } else if (res.value_error) {
+        setNameError("");
+        setValueError(res.value_error);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -37,6 +47,7 @@ export default function Form() {
             value={formData.name}
             onChange={onChange}
           />
+          <p>{nameError}</p>
         </div>
         <div>
           <label to="value">skill Value : </label>
@@ -50,6 +61,7 @@ export default function Form() {
             max={100}
             onChange={onChange}
           />
+          <p>{valueError}</p>
         </div>
         <div>
           <button type="submit" onClick={onSubmit}>

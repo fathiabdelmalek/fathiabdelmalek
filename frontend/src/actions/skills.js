@@ -36,18 +36,20 @@ export const createSkill = (name, value) => async (dispatch) => {
   };
   const body = JSON.stringify({ name, value });
   try {
-    instance.post(`skills/`, body, config).then((res) => {
-      if (res.status === 201) {
-        dispatch({
-          type: SKILL_CREATE_SUCCESS,
-          payload: res.data,
-        });
-      } else {
-        dispatch({
-          type: SKILL_CREATE_FAIL,
-        });
-      }
-    });
+    const res = await instance.post(`skills/`, body, config);
+    if (res.data.success)
+      dispatch({
+        type: SKILL_CREATE_SUCCESS,
+        payload: {
+          name,
+          value,
+        },
+      });
+    else
+      dispatch({
+        type: SKILL_CREATE_FAIL,
+      });
+    return res.data;
   } catch (err) {
     dispatch({
       type: SKILL_CREATE_FAIL,
@@ -55,7 +57,28 @@ export const createSkill = (name, value) => async (dispatch) => {
   }
 };
 
-export const editSkill = (id, name, value) => async (dispatch) => {};
+export const editSkill = (id, name, value) => async (dispatch) => {
+  const body = JSON.stringify({ name, value });
+  try {
+    const res = await instance.put(`skills/${id}/`, body);
+    if (res.data.success)
+      dispatch({
+        type: SKILL_EDIT_SUCCESS,
+        payload: res.data,
+      });
+    else
+      dispatch({
+        type: SKILL_EDIT_FAIL,
+      });
+    return res.data;
+  } catch (err) {
+    console.log("error in action");
+    console.log(err);
+    dispatch({
+      type: SKILL_EDIT_FAIL,
+    });
+  }
+};
 
 export const deleteSkill = (id) => async (dispatch) => {
   console.log(id);

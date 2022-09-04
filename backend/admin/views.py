@@ -4,7 +4,8 @@ from django.utils.decorators import method_decorator
 from django.utils.translation import gettext as _
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect
 
-from rest_framework import viewsets, status, views
+from rest_framework.views import APIView
+from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 
 from .serializers import UserSerializer
@@ -12,7 +13,7 @@ from .serializers import UserSerializer
 User = get_user_model()
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -23,7 +24,7 @@ class UserViewSet(viewsets.ModelViewSet):
         return Response({_('Error'): _("You can't delete this user")})
 
 
-class IsAuthenticated(views.APIView):
+class IsAuthenticated(APIView):
 
     def get(self, request, format=None):
         user = request.user
@@ -33,14 +34,14 @@ class IsAuthenticated(views.APIView):
 
 
 @method_decorator(ensure_csrf_cookie, name='dispatch')
-class GetCSRFToken(views.APIView):
+class GetCSRFToken(APIView):
 
     def get(self, request, format=None):
         return Response({'success': "CSRF Token cookie set"})
 
 
 @method_decorator(csrf_protect, name='dispatch')
-class LoginView(views.APIView):
+class LoginView(APIView):
 
     def post(self, request, format=None):
         try:
@@ -61,7 +62,7 @@ class LoginView(views.APIView):
             return Response({_('error'): _(f"Something went wrong when logging in\n") + e})
 
 
-class LogoutView(views.APIView):
+class LogoutView(APIView):
 
     def post(self, request, format=None):
         try:

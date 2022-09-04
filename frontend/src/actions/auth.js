@@ -7,7 +7,6 @@ import {
   LOGOUT_FAIL,
 } from "../types";
 import instance from "../axios";
-import Cookie from "js-cookie";
 
 export const checkAuthenticated = () => async (dispatch) => {
   try {
@@ -39,16 +38,9 @@ export const checkAuthenticated = () => async (dispatch) => {
 };
 
 export const login = (email, password) => async (dispatch) => {
-  const config = {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "X-CSRFToken": Cookie.get("csrftoken"),
-    },
-  };
   const body = JSON.stringify({ email, password });
   try {
-    const res = await instance.post(`admin/login/`, body, config);
+    const res = await instance.post(`admin/login/`, body);
     if (res.data.success) {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -79,18 +71,11 @@ export const login = (email, password) => async (dispatch) => {
 };
 
 export const logout = () => async (dispatch) => {
-  const config = {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "X-CSRFToken": Cookie.get("csrftoken"),
-    },
-  };
   const body = JSON.stringify({
     withCredentials: true,
   });
   try {
-    instance.post(`admin/logout/`, body, config).then((res) => {
+    instance.post(`admin/logout/`, body).then((res) => {
       if (res.data.success) {
         dispatch({
           type: LOGOUT_SUCCESS,

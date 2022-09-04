@@ -30,7 +30,7 @@ class SkillViewSet(ModelViewSet):
         serializer.save()
         return Response({_('success'): _("Skill created successfully")})
 
-    def update(self, request, *args, **kwargs):    
+    def update(self, request, *args, **kwargs):
         try:
             skill = self.get_object()
             if not request.data['value']:
@@ -43,4 +43,4 @@ class SkillViewSet(ModelViewSet):
                 serializer.update(skill, self.request.data)
                 return Response({_('success'): _("Skill updated successfully")})
         except Exception as e:
-            return Response({_('error'): _(f"Something went wrong when creating the skill\n") + e})
+            return Response({_('error'): _(f"Something went wrong when updating the skill\n") + e})

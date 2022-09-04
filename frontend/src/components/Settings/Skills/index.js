@@ -10,7 +10,7 @@ export default function SkillsSettings() {
 
   useEffect(() => {
     dispatch(getData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

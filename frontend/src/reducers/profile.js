@@ -1,4 +1,9 @@
-import { GET_PROFILE_SUCCESS, GET_PROFILE_FAIL } from "../types";
+import {
+  PROFILE_GET_SUCCESS,
+  PROFILE_GET_FAIL,
+  PROFILE_EDIT_SUCCESS,
+  PROFILE_EDIT_FAIL,
+} from "../types";
 
 const initialState = {
   loading: true,
@@ -14,17 +19,23 @@ const initialState = {
 export default function profileReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case GET_PROFILE_SUCCESS:
+    case PROFILE_GET_SUCCESS:
       return {
         ...state,
         loading: false,
         payload,
       };
-    case GET_PROFILE_FAIL:
+    case PROFILE_GET_FAIL:
       return {
         ...state,
         loading: false,
       };
+    case PROFILE_EDIT_SUCCESS:
+      return {
+        ...state,
+        payload,
+      };
+    case PROFILE_EDIT_FAIL:
     default:
       return state;
   }

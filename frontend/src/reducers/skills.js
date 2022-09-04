@@ -1,6 +1,6 @@
 import {
-  GET_SKILLS_SUCCESS,
-  GET_SKILLS_FAIL,
+  SKILLS_GET_SUCCESS,
+  SKILLS_GET_FAIL,
   SKILL_CREATE_SUCCESS,
   SKILL_CREATE_FAIL,
   SKILL_EDIT_SUCCESS,
@@ -21,13 +21,13 @@ const initialState = {
 export default function skillsReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case GET_SKILLS_SUCCESS:
+    case SKILLS_GET_SUCCESS:
       return {
         ...state,
         loading: false,
         payload,
       };
-    case GET_SKILLS_FAIL:
+    case SKILLS_GET_FAIL:
       return {
         ...state,
         loading: false,

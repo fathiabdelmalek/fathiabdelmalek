@@ -7,7 +7,7 @@ User = get_user_model()
 
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    full_name = models.CharField(verbose_name='full name', max_length=30, null=True, blank=True)
+    name = models.CharField(verbose_name='name', max_length=30, null=True, blank=True)
     job_title = models.CharField(verbose_name='job title', max_length=100, null=True, blank=True)
     phone = models.CharField(verbose_name='phone number', max_length=15, null=True, blank=True)
     image = models.FileField(verbose_name='profile image', null=True, blank=True, upload_to='images')

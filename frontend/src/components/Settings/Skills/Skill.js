@@ -20,10 +20,8 @@ export default function List({ skill }) {
       const res = await dispatch(
         editSkill(skill.id, skill.name, formData.value)
       );
-      // if (res.success) {
       if (res.success) {
         setValueMessage(res.success);
-        // } else if (res.value_error) {
       } else {
         setValueMessage(res.value_error);
       }
@@ -55,12 +53,8 @@ export default function List({ skill }) {
         value={formData.value}
         onChange={onChange}
       />
-      <button type="submit" onClick={onEdit}>
-        Save
-      </button>
-      <button type="submit" onClick={onDelete}>
-        Delete
-      </button>
+      <button onClick={onEdit}>Save</button>
+      <button onClick={onDelete}>Delete</button>
       <p>{valueMessage}</p>
     </form>
   );

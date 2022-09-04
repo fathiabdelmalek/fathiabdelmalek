@@ -1,6 +1,6 @@
 import {
-  GET_SKILLS_SUCCESS,
-  GET_SKILLS_FAIL,
+  SKILLS_GET_SUCCESS,
+  SKILLS_GET_FAIL,
   SKILL_CREATE_SUCCESS,
   SKILL_CREATE_FAIL,
   SKILL_EDIT_SUCCESS,
@@ -15,29 +15,24 @@ export const getData = () => async (dispatch) => {
     try {
       instance.get(`skills`).then((res) => {
         dispatch({
-          type: GET_SKILLS_SUCCESS,
+          type: SKILLS_GET_SUCCESS,
           payload: res.data,
         });
       });
     } catch (e) {
       dispatch({
-        type: GET_SKILLS_FAIL,
+        type: SKILLS_GET_FAIL,
       });
     }
   }, 1000);
 };
 
 export const createSkill = (name, value) => async (dispatch) => {
-  const config = {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-  };
   const body = JSON.stringify({ name, value });
   try {
-    const res = await instance.post(`skills/`, body, config);
-    if (res.data.success)
+    const res = await instance.post(`skills/`, body);
+    if (res.data.success) {
+      console.log(res);
       dispatch({
         type: SKILL_CREATE_SUCCESS,
         payload: {
@@ -45,7 +40,7 @@ export const createSkill = (name, value) => async (dispatch) => {
           value,
         },
       });
-    else
+    } else
       dispatch({
         type: SKILL_CREATE_FAIL,
       });
@@ -81,7 +76,6 @@ export const editSkill = (id, name, value) => async (dispatch) => {
 };
 
 export const deleteSkill = (id) => async (dispatch) => {
-  console.log(id);
   try {
     instance.delete(`skills/${id}`).then(() => {
       dispatch({

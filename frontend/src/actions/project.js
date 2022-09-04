@@ -1,4 +1,8 @@
-import { GET_PROJECT_SUCCESS, GET_PROJECT_FAIL, DONE_LOADING_PROJECT } from "../types";
+import {
+  PROJECT_GET_SUCCESS,
+  PROJECT_GET_FAIL,
+  PROJECT_LOADING_DONE,
+} from "../types";
 import instance from "../axios";
 
 export const getData = (id) => async (dispatch) => {
@@ -6,20 +10,20 @@ export const getData = (id) => async (dispatch) => {
     try {
       instance.get(`projects/${id}`).then((res) => {
         dispatch({
-          type: GET_PROJECT_SUCCESS,
+          type: PROJECT_GET_SUCCESS,
           payload: res.data,
         });
       });
     } catch (e) {
       dispatch({
-        type: GET_PROJECT_FAIL,
+        type: PROJECT_GET_FAIL,
       });
     }
   }, 1000);
-}
+};
 
 export const doneLoading = () => async (dispatch) => {
   dispatch({
-    type: DONE_LOADING_PROJECT,
-  })
-}
+    type: PROJECT_LOADING_DONE,
+  });
+};

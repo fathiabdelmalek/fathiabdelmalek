@@ -32,14 +32,26 @@ export default function ProfileSettings() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      let fd = new FormData();
+      const fd = new FormData();
       fd.append("name", formData.name);
       fd.append("job_title", formData.job_title);
       fd.append("phone", formData.phone);
-      formData.image
+      // // fd.append("image", formData.image, formData.image.name);
+      formData.image !== undefined &&
+      formData.image != null &&
+      formData.image != image &&
+      formData.image != profile.payload.image
         ? fd.append("image", formData.image, formData.image.name)
-        : fd.append("image", profile.payload.image, profile.payload.image.name);
+        : fd.append("image", null);
       const res = await dispatch(editProfile(fd));
+      // const res = await dispatch(
+      //   editProfile(
+      //     fd.get("name"),
+      //     fd.get("job_title"),
+      //     fd.get("phone"),
+      //     fd.get("image")
+      //   )
+      // );
       if (res.success) {
         setNameError("");
         setJobTitleError("");
@@ -72,7 +84,7 @@ export default function ProfileSettings() {
       //   console.log(res);
       // } else console.log("fail");
     } catch (err) {
-      console.log("error");
+      console.log("error in component");
       console.log(err);
     }
   };
@@ -104,7 +116,6 @@ export default function ProfileSettings() {
             id="image"
             name="image"
             accept="image/*"
-            value={profile.payload.image.name}
             onChange={onChange}
           />
           <p>{imageError}</p>
@@ -139,7 +150,7 @@ export default function ProfileSettings() {
               id="phone"
               name="phone"
               value={formData.phone}
-              onChange={() => onChange()}
+              onChange={onChange}
             />
             <p>{phoneError}</p>
           </div>

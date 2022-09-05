@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getData ,doneLoading } from "../../actions/project";
+import { getProject, doneLoading } from "../../actions/project";
 
 export default function Project() {
   const { id } = useParams();
-  const project = useSelector(state => state.project);
+  const project = useSelector((state) => state.project);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getData(id));
+    dispatch(getProject(id));
     return () => {
-        dispatch(doneLoading());
-      }
+      dispatch(doneLoading());
+    };
   }, []);
 
   return (

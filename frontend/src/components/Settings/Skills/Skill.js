@@ -15,7 +15,6 @@ export default function List({ skill }) {
   };
 
   const onEdit = async (e) => {
-    e.preventDefault();
     try {
       const res = await dispatch(
         editSkill(skill.id, skill.name, formData.value)
@@ -31,7 +30,6 @@ export default function List({ skill }) {
   };
 
   const onDelete = async (e) => {
-    e.preventDefault();
     try {
       dispatch(deleteSkill(skill.id));
     } catch (err) {
@@ -44,8 +42,8 @@ export default function List({ skill }) {
   }, [skill.value]);
 
   return (
-    <form>
-      <label to="value">{skill.name}</label>
+    <div>
+      <label htmlFor="value">{skill.name}</label>
       <input
         type="number"
         id="value"
@@ -56,6 +54,6 @@ export default function List({ skill }) {
       <button onClick={onEdit}>Save</button>
       <button onClick={onDelete}>Delete</button>
       <p>{valueMessage}</p>
-    </form>
+    </div>
   );
 }

@@ -1,19 +1,29 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../../actions/projects";
-import List from "./List";
+import { getProjects } from "../../actions/projects";
+import Project from "./Project";
 
 export default function Projects() {
   const projects = useSelector((state) => state.projects);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getData());
-  }, []);
+    dispatch(getProjects());
+  }, [dispatch]);
 
   return (
     <div>
-      {projects.loading ? "Loading" : <List projects={projects.payload} />}
+      {projects.loading ? (
+        "Loading"
+      ) : (
+        <ul>
+          {projects.payload.map((project) => (
+            <li key={project.id}>
+              <Project project={project} />
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

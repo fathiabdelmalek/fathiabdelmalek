@@ -3,14 +3,10 @@ import {
   PROJECTS_GET_SUCCESS,
   PROJECT_CREATE_SUCCESS,
   PROJECT_CREATE_FAIL,
-  PROJECT_EDIT_SUCCESS,
-  PROJECT_EDIT_FAIL,
-  PROJECT_DELETE_SUCCESS,
-  PROJECT_DELETE_FAIL,
 } from "../types";
 import instance from "../axios";
 
-export const getData = () => async (dispatch) => {
+export const getProjects = () => async (dispatch) => {
   setTimeout(() => {
     try {
       instance.get(`projects`).then((res) => {
@@ -37,9 +33,3 @@ export const createProject =
       });
     }
   };
-
-export const editProject =
-  (id, name, description, image = null) =>
-  async (dispatch) => {};
-
-export const deleteProject = (id) => async (dispatch) => {};

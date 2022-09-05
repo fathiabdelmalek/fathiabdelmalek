@@ -38,7 +38,7 @@ export default function Form() {
     <div>
       <form>
         <div>
-          <label to="name">skill Name : </label>
+          <label htmlFor="name">Skill Name : </label>
           <input
             type="text"
             id="name"
@@ -50,7 +50,7 @@ export default function Form() {
           <p>{nameError}</p>
         </div>
         <div>
-          <label to="value">skill Value : </label>
+          <label htmlFor="value">Skill Value : </label>
           <input
             type="number"
             id="value"

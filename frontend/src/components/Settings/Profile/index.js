@@ -36,22 +36,13 @@ export default function ProfileSettings() {
       fd.append("name", formData.name);
       fd.append("job_title", formData.job_title);
       fd.append("phone", formData.phone);
-      // // fd.append("image", formData.image, formData.image.name);
       formData.image !== undefined &&
       formData.image != null &&
-      formData.image != image &&
-      formData.image != profile.payload.image
+      formData.image !== image &&
+      formData.image !== profile.payload.image
         ? fd.append("image", formData.image, formData.image.name)
         : fd.append("image", null);
       const res = await dispatch(editProfile(fd));
-      // const res = await dispatch(
-      //   editProfile(
-      //     fd.get("name"),
-      //     fd.get("job_title"),
-      //     fd.get("phone"),
-      //     fd.get("image")
-      //   )
-      // );
       if (res.success) {
         setNameError("");
         setJobTitleError("");
@@ -79,10 +70,6 @@ export default function ProfileSettings() {
         setPhoneError("");
         setImageError(res.image_error);
       } else console.log(res);
-      // if (res.status === 200) {
-      //   console.log("success");
-      //   console.log(res);
-      // } else console.log("fail");
     } catch (err) {
       console.log("error in component");
       console.log(err);

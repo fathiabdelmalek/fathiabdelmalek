@@ -1,5 +1,5 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function List({ projects }) {
   return (
@@ -7,7 +7,9 @@ export default function List({ projects }) {
       {projects.map((project) => {
         return (
           <li key={project.id}>
-            <NavLink to={`/projects/${project.id}`} className="id"><h3>{project.name}</h3></NavLink>
+            <NavLink to={`/projects/${project.id}`}>
+              <h3>{project.name}</h3>
+            </NavLink>
             <span>{project.likes}</span>
             <p>{project.description}</p>
           </li>

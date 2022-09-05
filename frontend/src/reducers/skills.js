@@ -51,9 +51,7 @@ export default function skillsReducer(state = initialState, action) {
     case SKILL_DELETE_SUCCESS:
       return {
         ...state,
-        payload: state.payload.filter(
-          (item, index) => item.id !== action.payload
-        ),
+        payload: state.payload.filter((item) => item.id !== action.payload),
       };
     case SKILL_CREATE_FAIL:
     case SKILL_EDIT_FAIL:

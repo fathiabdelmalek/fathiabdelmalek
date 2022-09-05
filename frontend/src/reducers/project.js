@@ -6,7 +6,13 @@ import {
 
 const initialState = {
   loading: true,
-  payload: {},
+  payload: {
+    id: 0,
+    name: "",
+    likes: "",
+    image: "",
+    description: "",
+  },
 };
 
 export default function projectReducer(state = initialState, action) {

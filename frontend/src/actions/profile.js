@@ -24,13 +24,13 @@ export const getData = () => async (dispatch) => {
 };
 
 export const editProfile =
-  (name, job_title, phone, image = null) =>
-  async (dispatch) => {
+  // (name, job_title, phone, image) => async (dispatch) => {
+  (data) => async (dispatch) => {
     // if (image) {
-    const body = JSON.stringify({ name, job_title, phone, image });
     try {
-      const res = await instance.put(`profiles/1/`, body);
-      if (res.data.success) {
+      const res = await instance.put(`profiles/1/`, data);
+      // if (res.data.success) {
+      if (res.status === 200) {
         dispatch({
           type: PROFILE_EDIT_SUCCESS,
           payload: res.data,
@@ -40,8 +40,11 @@ export const editProfile =
           type: PROFILE_EDIT_FAIL,
         });
       }
-      return res.data;
+      // return res.data;
+      return res;
     } catch (err) {
+      console.log("error in action");
+      console.log(err);
       dispatch({
         type: PROFILE_EDIT_FAIL,
       });

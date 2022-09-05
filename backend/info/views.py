@@ -23,6 +23,8 @@ class ProfileViewSet(ModelViewSet):
                 return Response({_('job_title_error'): _("You must enter your job title")})
             if not request.data['phone']:
                 return Response({_('phone_error'): _("You must enter your phone number")})
+            if not request.data['image']:
+                return Response({_('image_error'): _("You must put an image")})
             serializer = self.get_serializer(data=self.request.data)
             if serializer.is_valid():
                 serializer.update(profile, self.request.data)

@@ -10,7 +10,8 @@ class Profile(models.Model):
     name = models.CharField(verbose_name='name', max_length=30, null=True, blank=True)
     job_title = models.CharField(verbose_name='job title', max_length=100, null=True, blank=True)
     phone = models.CharField(verbose_name='phone number', max_length=15, null=True, blank=True)
-    image = models.FileField(verbose_name='profile image', null=True, blank=True, upload_to='images')
+    # image = models.FileField(verbose_name='profile image', null=True, blank=True, upload_to='images')
+    image = models.ImageField(verbose_name='profile image', null=True, blank=True, upload_to='images')
 
     def __str__(self):
         return self.full_name

@@ -41,7 +41,7 @@ export default function List({ skill }) {
 
   useEffect(() => {
     setFormData({ value: skill.value });
-  }, []);
+  }, [skill.value]);
 
   return (
     <form>

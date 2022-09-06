@@ -1,5 +1,5 @@
 import axios from "axios";
-import JsCookie from "js-cookie";
+import Cookies from "js-cookie";
 
 const baseURL = "http://127.0.0.1:8000/api/";
 
@@ -12,7 +12,7 @@ const instance = axios.create({
       : null,
     Accept: "application/json",
     "Content-Type": "application/json",
-    "X-CSRFToken": JsCookie.get("csrftoken"),
+    "X-CSRFToken": Cookies.get("csrftoken"),
   },
 });
 

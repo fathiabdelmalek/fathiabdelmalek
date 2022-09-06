@@ -1,29 +1,47 @@
-import { GET_PROJECT_SUCCESS, GET_PROJECT_FAIL, DONE_LOADING_PROJECT } from "../types";
+import {
+  PROJECT_GET_SUCCESS,
+  PROJECT_GET_FAIL,
+  PROJECT_LOADING_DONE,
+  PROJECT_EDIT_SUCCESS,
+  PROJECT_EDIT_FAIL,
+} from "../types";
 
 const initialState = {
   loading: true,
-  payload: {},
+  payload: {
+    id: 0,
+    name: "",
+    likes: "",
+    image: "",
+    description: "",
+  },
 };
 
 export default function projectReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case GET_PROJECT_SUCCESS:
+    case PROJECT_GET_SUCCESS:
       return {
         ...state,
         loading: false,
         payload,
       };
-    case GET_PROJECT_FAIL:
+    case PROJECT_GET_FAIL:
       return {
         ...state,
-        loading: false
+        loading: false,
       };
-    case DONE_LOADING_PROJECT:
+    case PROJECT_LOADING_DONE:
       return {
         ...state,
         loading: true,
       };
+    case PROJECT_EDIT_SUCCESS:
+      return {
+        ...state,
+        payload,
+      };
+    case PROJECT_EDIT_FAIL:
     default:
       return state;
   }

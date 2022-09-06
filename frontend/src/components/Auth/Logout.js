@@ -14,7 +14,7 @@ export default function Logout({ isAuthenticated }) {
       console.log("you cant logout since you didn't logged in yet");
       navigate("/", { replace: true });
     }
-  }, []);
+  }, [dispatch, isAuthenticated, navigate]);
 
   return (
     <div>

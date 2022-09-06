@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../../actions/profile";
+import { getProfile } from "../../actions/profile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAt, faPhone } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,8 +9,8 @@ export default function Profile() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getData());
-  }, []);
+    dispatch(getProfile());
+  }, [dispatch]);
 
   return (
     <div>
@@ -18,30 +18,28 @@ export default function Profile() {
         <a href={profile.payload.image} target="_blank" rel="noreferrer">
           <img
             src={profile.payload.image}
-            alt={profile.payload.full_name}
+            alt={profile.payload.name}
             width="200px"
             height="200px"
-          />{" "}
-        </a>{" "}
-      </section>{" "}
+          />
+        </a>
+      </section>
       <section>
-        <h2>
-          Hi, I 'm {profile.loading ? "Loading" : profile.payload.full_name}{" "}
-        </h2>{" "}
-        <h3> {profile.loading ? "Loading" : profile.payload.job_title} </h3>{" "}
+        <h2>Hi, I 'm {profile.loading ? "Loading" : profile.payload.name}</h2>
+        <h3> {profile.loading ? "Loading" : profile.payload.job_title} </h3>
         <p>
           <b>
-            <FontAwesomeIcon icon={faAt} /> :{" "}
-          </b>{" "}
-          {profile.loading ? "Loading" : profile.payload.email}{" "}
-        </p>{" "}
+            <FontAwesomeIcon icon={faAt} /> :
+          </b>
+          {profile.loading ? "Loading" : profile.payload.email}
+        </p>
         <p>
           <b>
-            <FontAwesomeIcon icon={faPhone} /> :{" "}
-          </b>{" "}
-          {profile.loading ? "Loading" : profile.payload.phone}{" "}
-        </p>{" "}
-      </section>{" "}
+            <FontAwesomeIcon icon={faPhone} /> :
+          </b>
+          {profile.loading ? "Loading" : profile.payload.phone}
+        </p>
+      </section>
     </div>
   );
 }

@@ -12,6 +12,11 @@ import Project from "./components/Project";
 import Login from "./components/Auth/Login";
 import Logout from "./components/Auth/Logout";
 import { checkAuthenticated } from "./actions/auth";
+import SkillsSettings from "./components/Settings/Skills";
+import ProfileSettings from "./components/Settings/Profile";
+import ProjectsSettings from "./components/Settings/Projects";
+import ProjectSettings from "./components/Settings/Project";
+import NewProject from "./components/Settings/Projects/New";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -41,6 +46,12 @@ export default function App() {
             path={"/logout"}
             element={<Logout isAuthenticated={isAuthenticated} />}
           />
+          {/* Settings */}
+          <Route path="/settings/profile" element={<ProfileSettings />} />
+          <Route path="/settings/skills" element={<SkillsSettings />} />
+          <Route path="/settings/projects" element={<ProjectsSettings />} />
+          <Route path="/settings/projects/:id" element={<ProjectSettings />} />
+          <Route path="/settings/projects/new" element={<NewProject />} />
         </Routes>
       </main>
       <Footer />

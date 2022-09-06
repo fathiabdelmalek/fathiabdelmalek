@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../../actions/skills";
+import { getSkills } from "../../actions/skills";
 import List from "./List";
 
 export default function Skills() {
@@ -8,8 +8,8 @@ export default function Skills() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getData());
-  }, []);
+    dispatch(getSkills());
+  }, [dispatch]);
 
   return (
     <div>{skills.loading ? "Loading" : <List skills={skills.payload} />}</div>

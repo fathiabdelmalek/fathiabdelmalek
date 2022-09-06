@@ -23,6 +23,7 @@ class SkillViewSet(ModelViewSet):
             serializer = self.get_serializer(data=self.request.data)
             if serializer.is_valid():
                 return self.perform_create(serializer)
+            return Response({_('data_error'): _("Invalid data")})
         except Exception as e:
             return Response({_('error'): _(f"Something went wrong when creating the skill\n") + e})
 
@@ -33,6 +34,8 @@ class SkillViewSet(ModelViewSet):
     def update(self, request, *args, **kwargs):
         try:
             skill = self.get_object()
+            if not request.data['name']:
+                return Response({_('name_error'): _("You must enter the skill name")})
             if not request.data['value']:
                 return Response({_('value_error'): _("You must enter a valid number for the skill value")})
             value = request.data['value']
@@ -42,5 +45,6 @@ class SkillViewSet(ModelViewSet):
             if serializer.is_valid():
                 serializer.update(skill, self.request.data)
                 return Response({_('success'): _("Skill updated successfully")})
+            return Response({_('data_error'): _("Invalid data")})
         except Exception as e:
             return Response({_('error'): _(f"Something went wrong when updating the skill\n") + e})

@@ -23,6 +23,11 @@ export default function ProjectSettings() {
   const [nameError, setNameError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+  const upload = (e) => {
+    e.preventDefault();
+    document.getElementById("image").click();
+  };
+
   const onChange = (e) => {
     if (e.target.name === "image") {
       setFormData({
@@ -96,12 +101,14 @@ export default function ProjectSettings() {
                 height="200px"
               />
               <input
+                style={{ display: "none" }}
                 type="file"
                 id="image"
                 name="image"
                 accept="image/*"
                 onChange={onChange}
               />
+              <button onClick={upload.bind()}>Pick Image</button>
             </div>
             <div>
               <label htmlFor="name">Project Name : </label>

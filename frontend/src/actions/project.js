@@ -10,9 +10,9 @@ import {
 import instance from "../axios";
 
 export const getProject = (id) => async (dispatch) => {
-  // setTimeout(() => {
+  let res;
   try {
-    const res = await instance.get(`projects/${id}`);
+    res = await instance.get(`projects/${id}`);
     if (res.status === 200)
       dispatch({
         type: PROJECT_GET_SUCCESS,
@@ -23,12 +23,12 @@ export const getProject = (id) => async (dispatch) => {
         type: PROJECT_GET_FAIL,
       });
     return res;
-  } catch (e) {
+  } catch (err) {
     dispatch({
       type: PROJECT_GET_FAIL,
     });
   }
-  // }, 1000);
+  return res;
 };
 
 export const doneLoading = () => async (dispatch) => {
@@ -41,8 +41,8 @@ export const editProject = (id, data) => async (dispatch) => {
   const name = data.get("name");
   const description = data.get("description");
   const image = data.get("image");
+  let res;
   try {
-    let res;
     if (image && image !== "null") {
       res = await instance.patch(`projects/${id}/`, data);
     } else {
@@ -59,7 +59,6 @@ export const editProject = (id, data) => async (dispatch) => {
         type: PROJECT_EDIT_FAIL,
       });
     }
-    return res.data;
   } catch (err) {
     console.log("error in action");
     console.log(err);
@@ -67,11 +66,13 @@ export const editProject = (id, data) => async (dispatch) => {
       type: PROJECT_EDIT_FAIL,
     });
   }
+  return res;
 };
 
 export const deleteProject = (id) => async (dispatch) => {
+  let res;
   try {
-    const res = await instance.delete(`projects/${id}`);
+    res = await instance.delete(`projects/${id}`);
     if (res.status === 204)
       dispatch({
         type: PROJECT_DELETE_SUCCESS,
@@ -86,4 +87,5 @@ export const deleteProject = (id) => async (dispatch) => {
       type: PROJECT_DELETE_FAIL,
     });
   }
+  return res;
 };

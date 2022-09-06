@@ -7,20 +7,24 @@ import {
 import instance from "../axios";
 
 export const getProjects = () => async (dispatch) => {
-  setTimeout(() => {
-    try {
-      instance.get(`projects`).then((res) => {
-        dispatch({
-          type: PROJECTS_GET_SUCCESS,
-          payload: res.data,
-        });
+  let res;
+  try {
+    res = await instance.get(`projects`);
+    if (res.status === 200)
+      dispatch({
+        type: PROJECTS_GET_SUCCESS,
+        payload: res.data,
       });
-    } catch (e) {
+    else
       dispatch({
         type: PROJECTS_GET_FAIL,
       });
-    }
-  }, 1000);
+  } catch (e) {
+    dispatch({
+      type: PROJECTS_GET_FAIL,
+    });
+  }
+  return res;
 };
 
 export const createProject = (data) => async (dispatch) => {

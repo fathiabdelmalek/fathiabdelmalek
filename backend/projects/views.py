@@ -35,5 +35,6 @@ class ProjectViewSet(ModelViewSet):
             if serializer.is_valid():
                 serializer.update(project, self.request.data)
                 return Response({_('success'): _("Project updated successfully")})
+            return Response({_('data_error'): _("Invalid data")})
         except Exception as e:
             return Response({_('error'): _(f"Something went wrong when updating this project\n") + e})

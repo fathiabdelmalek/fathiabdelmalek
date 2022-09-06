@@ -42,7 +42,7 @@ export default function Login({ isAuthenticated }) {
       console.log("you are already logged in");
       navigate("/", { replace: true });
     }
-  });
+  }, [isAuthenticated, navigate]);
 
   return (
     <div>

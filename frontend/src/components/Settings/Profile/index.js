@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData, editProfile } from "../../../actions/profile";
+import { getProfile, editProfile } from "../../../actions/profile";
 
 export default function ProfileSettings() {
   const profile = useSelector((state) => state.profile);
@@ -18,6 +18,11 @@ export default function ProfileSettings() {
   const [phoneError, setPhoneError] = useState("");
   const [imageError, setImageError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+
+  const upload = (e) => {
+    e.preventDefault();
+    document.getElementById("image").click();
+  };
 
   const onChange = (e) => {
     if (e.target.name === "image") {
@@ -39,34 +44,38 @@ export default function ProfileSettings() {
       formData.image && formData.image !== profile.payload.image
         ? fd.append("image", formData.image, formData.image.name)
         : fd.append("image", null);
-      const res = await dispatch(editProfile(fd));
-      if (res.success) {
+      const { data } = await dispatch(editProfile(fd));
+      if (data.success) {
         setNameError("");
         setJobTitleError("");
         setPhoneError("");
         setImageError("");
-        setSuccessMessage(res.success);
-      } else if (res.name_error) {
-        setNameError(res.name_error);
+        setSuccessMessage(data.success);
+      } else if (data.name_error) {
+        setNameError(data.name_error);
         setJobTitleError("");
         setPhoneError("");
         setImageError("");
-      } else if (res.job_title_error) {
+        setSuccessMessage("");
+      } else if (data.job_title_error) {
         setNameError("");
-        setJobTitleError(res.job_title_error);
+        setJobTitleError(data.job_title_error);
         setPhoneError("");
         setImageError("");
-      } else if (res.phone_error) {
+        setSuccessMessage("");
+      } else if (data.phone_error) {
         setNameError("");
         setJobTitleError("");
-        setPhoneError(res.phone_error);
+        setPhoneError(data.phone_error);
         setImageError("");
-      } else if (res.image_error) {
+        setSuccessMessage("");
+      } else if (data.image_error) {
         setNameError("");
         setJobTitleError("");
         setPhoneError("");
-        setImageError(res.image_error);
-      } else console.log(res);
+        setImageError(data.image_error);
+        setSuccessMessage("");
+      }
     } catch (err) {
       console.log("error in component");
       console.log(err);
@@ -74,7 +83,7 @@ export default function ProfileSettings() {
   };
 
   useEffect(() => {
-    dispatch(getData());
+    dispatch(getProfile());
     setFormData({
       name: profile.payload.name,
       job_title: profile.payload.job_title,
@@ -96,12 +105,14 @@ export default function ProfileSettings() {
         <section>
           <img src={image} alt={formData.name} width="200px" height="200px" />
           <input
+            style={{ display: "none" }}
             type="file"
             id="image"
             name="image"
             accept="image/*"
             onChange={onChange}
           />
+          <button onClick={upload.bind()}>Pick Image</button>
           <p>{imageError}</p>
         </section>
         <section>

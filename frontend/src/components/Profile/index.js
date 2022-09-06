@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../../actions/profile";
+import { getProfile } from "../../actions/profile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAt, faPhone } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,8 +9,8 @@ export default function Profile() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getData());
-  }, []);
+    dispatch(getProfile());
+  }, [dispatch]);
 
   return (
     <div>

@@ -17,10 +17,11 @@ class MessageViewSet(ModelViewSet):
             if not request.data['email']:
                 return Response({_('email_error'): _("You must enter the email")})
             if not request.data['body']:
-                return Response({_('message_error'): _("You should enter message body")})
+                return Response({_('message_error'): _("You should enter the message")})
             serializer = self.get_serializer(data=self.request.data)
             if serializer.is_valid():
                 return self.perform_create(serializer)
+            return Response({_('data_error'): _("Invalid data")})
         except Exception as e:
             return Response({_('error'): _(f"Something went wrong when sending the message\n") + e})
 

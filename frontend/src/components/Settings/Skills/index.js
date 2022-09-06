@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../../../actions/skills";
+import { getSkills } from "../../../actions/skills";
 import Form from "./Form";
 import Skill from "./Skill";
 
@@ -9,7 +9,7 @@ export default function SkillsSettings() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getData());
+    dispatch(getSkills());
   }, [dispatch]);
 
   return (

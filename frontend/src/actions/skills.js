@@ -10,7 +10,7 @@ import {
 } from "../types";
 import instance from "../axios";
 
-export const getData = () => async (dispatch) => {
+export const getSkills = () => async (dispatch) => {
   setTimeout(() => {
     try {
       instance.get(`skills`).then((res) => {
@@ -29,8 +29,9 @@ export const getData = () => async (dispatch) => {
 
 export const createSkill = (name, value) => async (dispatch) => {
   const body = JSON.stringify({ name, value });
+  let res;
   try {
-    const res = await instance.post(`skills/`, body);
+    res = await instance.post(`skills/`, body);
     if (res.data.success) {
       console.log(res);
       dispatch({
@@ -44,18 +45,19 @@ export const createSkill = (name, value) => async (dispatch) => {
       dispatch({
         type: SKILL_CREATE_FAIL,
       });
-    return res.data;
   } catch (err) {
     dispatch({
       type: SKILL_CREATE_FAIL,
     });
   }
+  return res;
 };
 
 export const editSkill = (id, name, value) => async (dispatch) => {
   const body = JSON.stringify({ name, value });
+  let res;
   try {
-    const res = await instance.put(`skills/${id}/`, body);
+    res = await instance.put(`skills/${id}/`, body);
     if (res.data.success)
       dispatch({
         type: SKILL_EDIT_SUCCESS,
@@ -67,25 +69,30 @@ export const editSkill = (id, name, value) => async (dispatch) => {
       });
     return res.data;
   } catch (err) {
-    console.log("error in action");
-    console.log(err);
     dispatch({
       type: SKILL_EDIT_FAIL,
     });
   }
+  return res;
 };
 
 export const deleteSkill = (id) => async (dispatch) => {
+  let res;
   try {
-    instance.delete(`skills/${id}`).then(() => {
+    res = instance.delete(`skills/${id}`);
+    if (res.status === 204)
       dispatch({
         type: SKILL_DELETE_SUCCESS,
         payload: id,
       });
-    });
+    else
+      dispatch({
+        type: SKILL_DELETE_FAIL,
+      });
   } catch (err) {
     dispatch({
       type: SKILL_DELETE_FAIL,
     });
   }
+  return res;
 };

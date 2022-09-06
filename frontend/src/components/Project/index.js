@@ -13,7 +13,7 @@ export default function Project() {
     return () => {
       dispatch(doneLoading());
     };
-  }, []);
+  }, [dispatch, id]);
 
   return (
     <div className="skills-container">

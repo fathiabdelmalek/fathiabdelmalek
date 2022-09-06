@@ -36,10 +36,7 @@ export default function ProfileSettings() {
       fd.append("name", formData.name);
       fd.append("job_title", formData.job_title);
       fd.append("phone", formData.phone);
-      formData.image !== undefined &&
-      formData.image != null &&
-      formData.image !== image &&
-      formData.image !== profile.payload.image
+      formData.image && formData.image !== profile.payload.image
         ? fd.append("image", formData.image, formData.image.name)
         : fd.append("image", null);
       const res = await dispatch(editProfile(fd));

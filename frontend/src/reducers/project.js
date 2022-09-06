@@ -2,6 +2,8 @@ import {
   PROJECT_GET_SUCCESS,
   PROJECT_GET_FAIL,
   PROJECT_LOADING_DONE,
+  PROJECT_EDIT_SUCCESS,
+  PROJECT_EDIT_FAIL,
 } from "../types";
 
 const initialState = {
@@ -34,6 +36,12 @@ export default function projectReducer(state = initialState, action) {
         ...state,
         loading: true,
       };
+    case PROJECT_EDIT_SUCCESS:
+      return {
+        ...state,
+        payload,
+      };
+    case PROJECT_EDIT_FAIL:
     default:
       return state;
   }

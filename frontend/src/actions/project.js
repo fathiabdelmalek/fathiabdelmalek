@@ -37,9 +37,37 @@ export const doneLoading = () => async (dispatch) => {
   });
 };
 
-export const editProject =
-  (id, name, description, image = null) =>
-  async (dispatch) => {};
+export const editProject = (id, data) => async (dispatch) => {
+  const name = data.get("name");
+  const description = data.get("description");
+  const image = data.get("image");
+  try {
+    let res;
+    if (image && image !== "null") {
+      res = await instance.patch(`projects/${id}/`, data);
+    } else {
+      const body = JSON.stringify({ name, description });
+      res = await instance.patch(`projects/${id}/`, body);
+    }
+    if (res.data.success) {
+      dispatch({
+        type: PROJECT_EDIT_SUCCESS,
+        payload: res.data,
+      });
+    } else {
+      dispatch({
+        type: PROJECT_EDIT_FAIL,
+      });
+    }
+    return res.data;
+  } catch (err) {
+    console.log("error in action");
+    console.log(err);
+    dispatch({
+      type: PROJECT_EDIT_FAIL,
+    });
+  }
+};
 
 export const deleteProject = (id) => async (dispatch) => {
   try {

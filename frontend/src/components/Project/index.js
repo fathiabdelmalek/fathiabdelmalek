@@ -21,6 +21,7 @@ export default function Project() {
         <p>Loading</p>
       ) : (
         <div>
+          <img src={project.payload.image} height="200" width="200" />
           <p>{project.payload.name}</p>
           <p>{project.payload.description}</p>
         </div>

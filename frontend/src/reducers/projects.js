@@ -3,8 +3,6 @@ import {
   PROJECTS_GET_SUCCESS,
   PROJECT_CREATE_SUCCESS,
   PROJECT_CREATE_FAIL,
-  PROJECT_EDIT_SUCCESS,
-  PROJECT_EDIT_FAIL,
   PROJECT_DELETE_SUCCESS,
   PROJECT_DELETE_FAIL,
 } from "../types";
@@ -29,14 +27,12 @@ export default function projectsReducer(state = initialState, action) {
         loading: false,
       };
     case PROJECT_CREATE_SUCCESS:
-    case PROJECT_EDIT_SUCCESS:
     case PROJECT_DELETE_SUCCESS:
       return {
         ...state,
         payload: state.payload.filter((item) => item.id !== action.payload),
       };
     case PROJECT_CREATE_FAIL:
-    case PROJECT_EDIT_FAIL:
     case PROJECT_DELETE_FAIL:
     default:
       return state;

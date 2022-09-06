@@ -10,13 +10,21 @@ from .serializers import ProjectSerializer
 class ProjectViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    # name, description, likes, image
 
     def create(self, request, *args, **kwargs):
-        return super().create(request, *args, **kwargs)
+        try:
+            if not request.data['name']:
+                return Response({_('name_error'): _("You must enter the project name")})
+            serializer = self.get_serializer(data=self.request.data)
+            if serializer.is_valid():
+                return self.perform_create(serializer)
+            return Response({_('data_error'): _("Invalid data")})
+        except Exception as e:
+            return Response({_('error'): _(f"Something went wrong when creating the project\n") + e})
 
     def perform_create(self, serializer):
-        return super().perform_create(serializer)
+        serializer.save()
+        return Response({_('success'): _("Project created successfully"), 'id': serializer.data['id']})
 
     def partial_update(self, request, *args, **kwargs):
         try:

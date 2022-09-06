@@ -16,6 +16,7 @@ import SkillsSettings from "./components/Settings/Skills";
 import ProfileSettings from "./components/Settings/Profile";
 import ProjectsSettings from "./components/Settings/Projects";
 import ProjectSettings from "./components/Settings/Project";
+import NewProject from "./components/Settings/Projects/New";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ export default function App() {
           <Route path="/settings/skills" element={<SkillsSettings />} />
           <Route path="/settings/projects" element={<ProjectsSettings />} />
           <Route path="/settings/projects/:id" element={<ProjectSettings />} />
+          <Route path="/settings/projects/new" element={<NewProject />} />
         </Routes>
       </main>
       <Footer />

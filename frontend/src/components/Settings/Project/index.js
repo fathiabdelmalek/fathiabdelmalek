@@ -37,7 +37,6 @@ export default function ProjectSettings() {
     e.preventDefault();
     try {
       const fd = new FormData();
-      fd.append("name", formData.name);
       formData.name && formData.name !== ""
         ? fd.append("name", formData.name)
         : fd.append("name", null);
@@ -75,6 +74,7 @@ export default function ProjectSettings() {
         description: res.data.description,
         image: res.data.image,
       });
+      setImage(res.data.image);
     });
     return () => {
       dispatch(doneLoading());
@@ -82,7 +82,7 @@ export default function ProjectSettings() {
   }, [dispatch, id]);
 
   return (
-    <div className="skills-container">
+    <div>
       {project.loading ? (
         <p>Loading</p>
       ) : (

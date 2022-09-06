@@ -9,7 +9,13 @@ import {
 
 const initialState = {
   loading: true,
-  payload: {},
+  payload: {
+    id: 0,
+    name: "",
+    likes: "",
+    image: "",
+    description: "",
+  },
 };
 
 export default function projectsReducer(state = initialState, action) {
@@ -27,6 +33,10 @@ export default function projectsReducer(state = initialState, action) {
         loading: false,
       };
     case PROJECT_CREATE_SUCCESS:
+      return {
+        ...state,
+        payload: [...state.payload, payload],
+      };
     case PROJECT_DELETE_SUCCESS:
       return {
         ...state,

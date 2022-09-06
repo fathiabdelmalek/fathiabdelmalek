@@ -14,6 +14,7 @@ export default function ProjectsSettings() {
 
   return (
     <div>
+      <NavLink to={`/settings/projects/new`}>Create new project</NavLink>
       {projects.loading ? (
         "Loading"
       ) : (

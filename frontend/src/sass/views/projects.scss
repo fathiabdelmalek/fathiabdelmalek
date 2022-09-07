@@ -1,16 +1,41 @@
 .projects-container {
+  padding: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  row-gap: 20px;
+  list-style-type: none;
 
   .project {
     margin: 15px;
+    width: 350px;
+    background-color: $shadow-color;
 
     a {
       text-decoration: none;
       color: $second-color;
       font-weight: bolder;
+    }
+
+    .image-section {
+      .project-image {
+        width: 350px;
+      }
+    }
+
+    .info-section {
+      position: relative;
+
+      .project-name {
+        margin-left: 10px;
+      }
+
+      .project-likes {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
     }
   }
 }

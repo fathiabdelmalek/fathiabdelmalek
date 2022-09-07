@@ -10,11 +10,11 @@ export default function List({ skill }) {
   }, [skill.id, value]);
 
   return (
-    <div className="skill">
+    <React.Fragment>
       <div id={skill.id} className="progress">
         <span className="skill-value">{skill.value}%</span>
       </div>
       <span className="skill-name">{skill.name}</span>
-    </div>
+    </React.Fragment>
   );
 }

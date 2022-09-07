@@ -16,9 +16,9 @@ export default function Projects() {
       {projects.loading ? (
         "Loading"
       ) : (
-        <ul>
+        <ul className="projects-container">
           {projects.payload.map((project) => (
-            <li key={project.id}>
+            <li key={project.id} className="project">
               <Project project={project} />
             </li>
           ))}

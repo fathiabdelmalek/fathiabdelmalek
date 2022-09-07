@@ -1,12 +1,15 @@
 .skill-container {
+  padding: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  row-gap: 15px;
+  list-style-type: none;
 
   .skill {
     display: flex;
-    width: 150px;
+    width: 220px;
     margin-bottom: 10px;
     padding: 10px 0;
     flex-direction: column;
@@ -17,33 +20,39 @@
 
     .progress {
       position: relative;
-      height: 100px;
-      width: 100px;
+      height: 160px;
+      width: 160px;
       border-radius: 50%;
-      background: conic-gradient($main-color, var(--value), $text-color 0deg);
+      background: conic-gradient($main-color, var(--value), $shadow-color 0deg);
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.2),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.2);
 
       &:before {
         content: "";
         position: absolute;
-        height: 80px;
-        width: 80px;
+        height: 120px;
+        width: 120px;
         border-radius: 50%;
         background-color: $shadow-color;
+        box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+          inset -4px -4px 6px -1px rgba(255, 255, 255, 0.2),
+          0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+          0px 12px 10px -10px rgba(0, 0, 0, 0.05);
       }
 
       .skill-value {
         position: relative;
-        font-size: 30px;
+        font-size: 40px;
         font-weight: 600;
         color: $main-color;
       }
     }
 
     .skill-name {
-      font-size: 22px;
+      font-size: 30px;
       font-weight: 500;
       color: $text-color;
     }

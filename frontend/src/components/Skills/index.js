@@ -12,19 +12,17 @@ export default function Skills() {
   }, [dispatch]);
 
   return (
-    <div className="skill-container">
+    <div>
       {skills.loading ? (
         "Loading"
       ) : (
-        <div>
-          {/* <ul> */}
+        <ul className="skill-container">
           {skills.payload.map((skill) => (
-            <div key={skill.id}>
+            <li key={skill.id} className="skill">
               <Skill skill={skill} />
-            </div>
+            </li>
           ))}
-          {/* </ul> */}
-        </div>
+        </ul>
       )}
     </div>
   );

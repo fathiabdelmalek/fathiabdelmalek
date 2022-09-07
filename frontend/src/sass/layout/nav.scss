@@ -1,0 +1,14 @@
+nav {
+  display: flex;
+  justify-content: space-evenly;
+
+  a {
+    text-decoration: none;
+    color: $second-color;
+
+    &:hover {
+      color: $main-color;
+      font-size: large;
+    }
+  }
+}

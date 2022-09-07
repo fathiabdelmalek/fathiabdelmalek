@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSkills } from "../../actions/skills";
-import List from "./List";
+import Skill from "./Skill";
 
 export default function Skills() {
   const skills = useSelector((state) => state.skills);
@@ -12,6 +12,20 @@ export default function Skills() {
   }, [dispatch]);
 
   return (
-    <div>{skills.loading ? "Loading" : <List skills={skills.payload} />}</div>
+    <div className="skill-container">
+      {skills.loading ? (
+        "Loading"
+      ) : (
+        <div>
+          {/* <ul> */}
+          {skills.payload.map((skill) => (
+            <div key={skill.id}>
+              <Skill skill={skill} />
+            </div>
+          ))}
+          {/* </ul> */}
+        </div>
+      )}
+    </div>
   );
 }

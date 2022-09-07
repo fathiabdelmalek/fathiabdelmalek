@@ -1,0 +1,16 @@
+.projects-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .project {
+    margin: 15px;
+
+    a {
+      text-decoration: none;
+      color: $second-color;
+      font-weight: bolder;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .image-container {
+    width: 45%;
+
+    img {
+      width: 85%;
+      border-radius: 50%;
+      filter: grayscale(100%);
+
+      &:hover {
+        filter: grayscale(0%) drop-shadow(8px 8px 10px #000);
+      }
+    }
+  }
+
+  .info-container {
+    font-size: large;
+
+    .job {
+      color: $main-color;
+    }
+
+    .email {
+      b {
+        color: $main-color;
+      }
+    }
+
+    .phone {
+      b {
+        color: $main-color;
+      }
+    }
+  }
+}

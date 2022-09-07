@@ -1,0 +1,51 @@
+.skill-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .skill {
+    display: flex;
+    width: 150px;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    background-color: $shadow-color;
+    border-radius: 8px;
+
+    .progress {
+      position: relative;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background: conic-gradient($main-color, var(--value), $text-color 0deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        background-color: $shadow-color;
+      }
+
+      .skill-value {
+        position: relative;
+        font-size: 30px;
+        font-weight: 600;
+        color: $main-color;
+      }
+    }
+
+    .skill-name {
+      font-size: 22px;
+      font-weight: 500;
+      color: $text-color;
+    }
+  }
+}

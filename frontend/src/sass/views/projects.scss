@@ -26,15 +26,18 @@
 
     .info-section {
       position: relative;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
 
       .project-name {
         margin-left: 10px;
       }
 
       .project-likes {
-        position: absolute;
-        top: 0;
-        right: 0;
+        margin: auto;
+        margin-right: 10px;
+        font-size: 20px;
+        color: $text-color;
       }
     }
   }

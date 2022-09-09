@@ -1,0 +1,43 @@
+.project-container {
+  .project-image {
+    display: flex;
+    padding: 30px $side-padding;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      // border: 4px groove $second-color;
+      border-radius: 40px;
+      box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.5),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  .project-info {
+    // display: grid;
+    padding: 0 $side-padding;
+    // grid-template-columns: 5fr 1fr;
+
+    .project-name {
+      margin-top: 0;
+      font-size: 50px;
+      text-align: center;
+
+      a {
+        color: $main-color;
+        text-decoration: none;
+
+        &:hover {
+          color: $second-color;
+          // font-size: large;
+        }
+      }
+    }
+
+    .project-description {
+      font-size: 20px;
+      line-height: 2;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin: auto $side-padding;
 
   a {
     text-decoration: none;

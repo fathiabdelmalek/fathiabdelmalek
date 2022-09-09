@@ -16,15 +16,25 @@ export default function Project() {
   }, [dispatch, id]);
 
   return (
-    <div className="skills-container">
+    <div className="project-container">
       {project.loading ? (
         <p>Loading</p>
       ) : (
-        <div>
-          <img src={project.payload.image} height="200" width="200" />
-          <p>{project.payload.name}</p>
-          <p>{project.payload.description}</p>
-        </div>
+        <React.Fragment>
+          <section className="project-image">
+            <a href={project.payload.image} target="_blank" rel="noreferrer">
+              <img src={project.payload.image} />
+            </a>
+          </section>
+          <section className="project-info">
+            <h1 className="project-name">
+              <a href="#" target="_blank">
+                {project.payload.name}
+              </a>
+            </h1>
+            <p className="project-description">{project.payload.description}</p>
+          </section>
+        </React.Fragment>
       )}
     </div>
   );

@@ -26,11 +26,10 @@
 
     .info-section {
       position: relative;
-      display: grid;
-      grid-template-columns: 3fr 1fr;
 
       .project-name {
         margin-left: 10px;
+        text-align: center;
       }
 
       .project-likes {

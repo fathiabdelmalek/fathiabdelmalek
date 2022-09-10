@@ -3,7 +3,7 @@ from django.utils.translation import gettext as _
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
-from .models import Project
+from .models import Image, Project
 from .serializers import ProjectSerializer
 
 
@@ -24,6 +24,7 @@ class ProjectViewSet(ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save()
+        # image = Image.objects.create(project=project)
         return Response({_('success'): _("Project created successfully"), 'id': serializer.data['id']})
 
     def partial_update(self, request, *args, **kwargs):

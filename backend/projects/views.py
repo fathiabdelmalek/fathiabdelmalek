@@ -1,3 +1,4 @@
+from email.mime import image
 from django.utils.translation import gettext as _
 
 from rest_framework.response import Response
@@ -17,6 +18,8 @@ class ProjectViewSet(ModelViewSet):
                 return Response({_('name_error'): _("You must enter the project name")})
             serializer = self.get_serializer(data=self.request.data)
             if serializer.is_valid():
+                for i in self.request.data.images:
+                    Image.objects.create(project=self.request.data.id, image=self.request.data.images[i])
                 return self.perform_create(serializer)
             return Response({_('data_error'): _("Invalid data")})
         except Exception as e:

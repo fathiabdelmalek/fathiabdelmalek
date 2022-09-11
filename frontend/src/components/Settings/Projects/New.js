@@ -9,7 +9,7 @@ export default function NewProject() {
   const initialForm = Object.freeze({
     name: "",
     description: "",
-    images: null,
+    images: [],
   });
   const [formData, setFormData] = useState(initialForm);
   const [images, setImages] = useState([]);

@@ -30,10 +30,10 @@ export const getProjects = () => async (dispatch) => {
 export const createProject = (data) => async (dispatch) => {
   const name = data.get("name");
   const description = data.get("description");
-  const image = data.get("image");
+  const images = data.get("images");
   let res;
   try {
-    if (image && image !== "null") {
+    if (images && images !== "null" && images !== []) {
       res = await instance.post(`projects/`, data);
     } else {
       const body = JSON.stringify({ name, description });

@@ -12,8 +12,7 @@ const initialState = {
   payload: {
     id: 0,
     name: "",
-    likes: "",
-    image: "",
+    link: "",
     description: "",
   },
 };

@@ -15,9 +15,7 @@ export default function Profile() {
   return (
     <div className="profile-container">
       <section className="image-container">
-        <a href={profile.payload.image} target="_blank" rel="noreferrer">
-          <img src={profile.payload.image} alt={profile.payload.name} />
-        </a>
+        <img src={profile.payload.image} alt={profile.payload.name} />
       </section>
       <section className="info-container">
         <h2 className="name">

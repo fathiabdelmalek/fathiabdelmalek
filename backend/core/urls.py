@@ -9,7 +9,7 @@ from rest_framework.routers import DefaultRouter
 from admin.views import UserViewSet
 from info.views import ProfileViewSet
 from skills.views import SkillViewSet
-from projects.views import ProjectViewSet
+from projects.views import ProjectViewSet, ImageViewSet
 from contact.views import MessageViewSet
 
 
@@ -17,6 +17,7 @@ router = DefaultRouter()
 router.register('users', UserViewSet)
 router.register('profiles', ProfileViewSet)
 router.register('projects', ProjectViewSet, basename='project')
+router.register('images', ImageViewSet, basename='image')
 router.register('skills', SkillViewSet, basename='skill')
 router.register('messages', MessageViewSet, basename='message')
 

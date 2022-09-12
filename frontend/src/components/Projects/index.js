@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getImages } from "../../actions/images";
 import { getProjects } from "../../actions/projects";
 import Project from "./Project";
 

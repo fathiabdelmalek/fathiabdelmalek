@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from .models import Image, Project
-from .serializers import ProjectSerializer
+from .serializers import ImageSerializer, ProjectSerializer
 
 
 class ProjectViewSet(ModelViewSet):
@@ -42,3 +42,8 @@ class ProjectViewSet(ModelViewSet):
             return Response({_('data_error'): _("Invalid data")})
         except Exception as e:
             return Response({_('error'): _(f"Something went wrong when updating this project\n") + e})
+
+
+class ImageViewSet(ModelViewSet):
+    queryset = Image.objects.all()
+    serializer_class = ImageSerializer

@@ -9,12 +9,7 @@ import {
 
 const initialState = {
   loading: true,
-  payload: {
-    id: 0,
-    name: "",
-    link: "",
-    description: "",
-  },
+  payload: [],
 };
 
 export default function projectsReducer(state = initialState, action) {

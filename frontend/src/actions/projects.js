@@ -29,6 +29,7 @@ export const getProjects = () => async (dispatch) => {
 
 export const createProject = (data) => async (dispatch) => {
   const name = data.get("name");
+  const link = data.get("link");
   const description = data.get("description");
   const images = data.get("images");
   let res;
@@ -36,7 +37,7 @@ export const createProject = (data) => async (dispatch) => {
     if (images && images !== "null" && images !== []) {
       res = await instance.post(`projects/`, data);
     } else {
-      const body = JSON.stringify({ name, description });
+      const body = JSON.stringify({ name, link, description });
       res = await instance.post(`projects/`, body);
     }
     if (res.data.success) {

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { createImage } from "../../../actions/images";
 import { createProject } from "../../../actions/projects";
 
 export default function NewProject() {
@@ -10,6 +11,7 @@ export default function NewProject() {
     name: "",
     link: "",
     description: "",
+    images: [],
   });
   const [formData, setFormData] = useState(initialForm);
   const [nameError, setNameError] = useState("");
@@ -23,6 +25,7 @@ export default function NewProject() {
   };
 
   const displayImages = () => {
+    html.innerHTML = "";
     for (let i = 0; i < _images.length; i++) {
       html.innerHTML =
         html.innerHTML +
@@ -38,8 +41,8 @@ export default function NewProject() {
         ...formData,
         [e.target.name]: files,
       });
+      _images = [];
       for (let i = 0; i < files.length; i++) {
-        setImages((images) => [...images, URL.createObjectURL(files[i])]);
         _images.push(URL.createObjectURL(files[i]));
       }
       displayImages();
@@ -55,13 +58,19 @@ export default function NewProject() {
         : fd.append("name", null);
       fd.append("link", formData.link);
       fd.append("description", formData.description);
-      images ? fd.append("images", images) : fd.append("images", null);
-      const res = await dispatch(createProject(fd));
-      if (res.data.success) {
+      const { data } = await dispatch(createProject(fd));
+      if (data.success) {
         setNameError("");
-        navigate(`/settings/projects/${res.data.id}`);
-      } else if (res.data.name_error) setNameError(res.data.name_error);
-      else if (res.data.data_error) setNameError(res.data.data_error);
+        let arr = Array.from(formData.images);
+        arr.forEach((image) => {
+          let fd = new FormData();
+          fd.append("project", data.id);
+          fd.append("image", image, image.name);
+          dispatch(createImage(fd));
+        });
+        navigate(`/settings/projects/${data.id}`);
+      } else if (data.name_error) setNameError(data.name_error);
+      else if (data.data_error) setNameError(data.data_error);
     } catch (err) {
       console.log("error in component");
       console.log(err);

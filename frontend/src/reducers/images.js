@@ -1,4 +1,9 @@
-import { IMAGES_GET_SUCCESS, IMAGES_GET_FAIL } from "../types";
+import {
+  IMAGES_GET_SUCCESS,
+  IMAGES_GET_FAIL,
+  IMAGE_CREATE_SUCCESS,
+  IMAGE_CREATE_FAIL,
+} from "../types";
 
 const initialState = {
   payload: [],
@@ -12,7 +17,8 @@ export default function imagesReducer(state = initialState, action) {
         ...state,
         payload,
       };
-
+    case IMAGE_CREATE_SUCCESS:
+    case IMAGE_CREATE_FAIL:
     case IMAGES_GET_FAIL:
     default:
       return state;

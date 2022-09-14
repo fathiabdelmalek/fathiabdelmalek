@@ -18,10 +18,10 @@ class ProjectViewSet(ModelViewSet):
             serializer = self.get_serializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
-                if 'images' in request.data:
-                    for img in request.data['images']:
-                        project = Project.objects.get(pk=serializer.data['id'])
-                        Image.objects.create(project=project, image=img)
+                # if 'images' in request.data:
+                #     for img in request.data['images']:
+                #         project = Project.objects.get(pk=serializer.data['id'])
+                #         Image.objects.create(project=project, image=img)
                 return Response({_('success'): _("Project created successfully"), 'id': serializer.data['id']})
             return Response({_('data_error'): _("Invalid data")})
         except Exception as e:

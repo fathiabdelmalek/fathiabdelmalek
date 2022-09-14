@@ -19,6 +19,23 @@ export default function ProfileSettings() {
   const [imageError, setImageError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+  useEffect(() => {
+    dispatch(getProfile());
+    setFormData({
+      name: profile.payload.name,
+      job_title: profile.payload.job_title,
+      phone: profile.payload.phone,
+      image: profile.payload.image,
+    });
+    setImage(profile.payload.image);
+  }, [
+    dispatch,
+    profile.payload.image,
+    profile.payload.job_title,
+    profile.payload.name,
+    profile.payload.phone,
+  ]);
+
   const upload = (e) => {
     e.preventDefault();
     document.getElementById("image").click();
@@ -81,23 +98,6 @@ export default function ProfileSettings() {
       console.log(err);
     }
   };
-
-  useEffect(() => {
-    dispatch(getProfile());
-    setFormData({
-      name: profile.payload.name,
-      job_title: profile.payload.job_title,
-      phone: profile.payload.phone,
-      image: profile.payload.image,
-    });
-    setImage(profile.payload.image);
-  }, [
-    dispatch,
-    profile.payload.image,
-    profile.payload.job_title,
-    profile.payload.name,
-    profile.payload.phone,
-  ]);
 
   return (
     <div>

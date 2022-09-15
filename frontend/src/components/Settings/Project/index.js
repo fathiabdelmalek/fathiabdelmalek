@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import { getImages } from "../../../actions/images";
 import {
   getProject,
   doneLoading,
@@ -15,26 +16,61 @@ export default function ProjectSettings() {
   const navigate = useNavigate();
   const initialFormData = Object.freeze({
     name: "",
+    link: "",
     description: "",
-    image: null,
+    images: [],
   });
   const [formData, setFormData] = useState(initialFormData);
-  const [image, setImage] = useState(null);
   const [nameError, setNameError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  let images = [];
+  let html = document.getElementById("images-container");
+
+  useEffect(() => {
+    dispatch(getProject(id)).then((res) => {
+      setFormData({
+        name: res.data.name,
+        description: res.data.description,
+      });
+    });
+    dispatch(getImages(id)).then((res) => {
+      let arr = Array.from(res.payload);
+      arr.forEach((image) => {
+        images.push(image.image);
+      });
+    });
+    console.log(images);
+    return () => {
+      dispatch(doneLoading());
+    };
+  }, [dispatch, id]);
 
   const upload = (e) => {
     e.preventDefault();
-    document.getElementById("image").click();
+    document.getElementById("images").click();
+  };
+
+  const displayImages = () => {
+    html.innerHTML = "";
+    for (let i = 0; i < images.length; i++)
+      html.innerHTML =
+        html.innerHTML +
+        `<img src=${images[i]} width="200px" height="200px" />`;
+    return html;
   };
 
   const onChange = (e) => {
-    if (e.target.name === "image") {
+    if (e.target.name === "images") {
+      let files = e.target.files;
       setFormData({
         ...formData,
-        [e.target.name]: e.target.files[0],
+        [e.target.name]: files,
       });
-      setImage(URL.createObjectURL(e.target.files[0]));
+      images = [];
+      for (let i = 0; i < files.length; i++) {
+        images.push(URL.createObjectURL(files[i]));
+      }
+      displayImages();
     } else setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -46,15 +82,12 @@ export default function ProjectSettings() {
         ? fd.append("name", formData.name)
         : fd.append("name", null);
       fd.append("description", formData.description);
-      formData.image && formData.image !== project.payload.image
-        ? fd.append("image", formData.image, formData.image.name)
-        : fd.append("image", null);
-      const res = await dispatch(editProject(id, fd));
-      if (res.success) {
+      const { data } = await dispatch(editProject(id, fd));
+      if (data.success) {
         setNameError("");
-        setSuccessMessage(res.success);
+        setSuccessMessage(data.success);
       } else {
-        setNameError(res.name_error);
+        setNameError(data.name_error);
         setSuccessMessage("");
       }
     } catch (err) {
@@ -72,20 +105,6 @@ export default function ProjectSettings() {
     }
   };
 
-  useEffect(() => {
-    dispatch(getProject(id)).then((res) => {
-      setFormData({
-        name: res.data.name,
-        description: res.data.description,
-        image: res.data.image,
-      });
-      setImage(res.data.image);
-    });
-    return () => {
-      dispatch(doneLoading());
-    };
-  }, [dispatch, id]);
-
   return (
     <div>
       {project.loading ? (
@@ -93,23 +112,6 @@ export default function ProjectSettings() {
       ) : (
         <div>
           <form>
-            <div>
-              <img
-                src={image}
-                alt={project.payload.name}
-                width="200px"
-                height="200px"
-              />
-              <input
-                style={{ display: "none" }}
-                type="file"
-                id="image"
-                name="image"
-                accept="image/*"
-                onChange={onChange}
-              />
-              <button onClick={upload.bind()}>Pick Image</button>
-            </div>
             <div>
               <label htmlFor="name">Project Name : </label>
               <input
@@ -138,6 +140,19 @@ export default function ProjectSettings() {
               </button>
               <button onClick={onDelete}>Delete</button>
               <p>{successMessage}</p>
+            </div>
+            <div>
+              <button onClick={upload.bind()}>Pick Image</button>
+              <input
+                style={{ display: "none" }}
+                type="file"
+                id="images"
+                name="images"
+                accept="image/*"
+                onChange={onChange}
+                multiple
+              />
+              <div id="images-container"></div>
             </div>
           </form>
         </div>

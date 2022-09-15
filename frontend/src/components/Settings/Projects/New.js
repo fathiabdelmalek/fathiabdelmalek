@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createImage } from "../../../actions/images";
@@ -15,8 +15,7 @@ export default function NewProject() {
   });
   const [formData, setFormData] = useState(initialForm);
   const [nameError, setNameError] = useState("");
-  const [images, setImages] = useState([]);
-  let _images = [];
+  let images = [];
   let html = document.getElementById("images-container");
 
   const upload = (e) => {
@@ -26,10 +25,10 @@ export default function NewProject() {
 
   const displayImages = () => {
     html.innerHTML = "";
-    for (let i = 0; i < _images.length; i++) {
+    for (let i = 0; i < images.length; i++) {
       html.innerHTML =
         html.innerHTML +
-        `<img src=${_images[i]} width="200px" height="200px" />`;
+        `<img src=${images[i]} width="200px" height="200px" />`;
     }
     return html;
   };
@@ -41,9 +40,9 @@ export default function NewProject() {
         ...formData,
         [e.target.name]: files,
       });
-      _images = [];
+      images = [];
       for (let i = 0; i < files.length; i++) {
-        _images.push(URL.createObjectURL(files[i]));
+        images.push(URL.createObjectURL(files[i]));
       }
       displayImages();
     } else setFormData({ ...formData, [e.target.name]: e.target.value });

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { getImages } from "../../../actions/images";
+import { createImage, deleteImage, getImages } from "../../../actions/images";
 import {
   getProject,
   doneLoading,
@@ -24,7 +24,7 @@ export default function ProjectSettings() {
   const [nameError, setNameError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   let images = [];
-  let html = document.getElementById("images-container");
+  let original_images = [];
 
   useEffect(() => {
     dispatch(getProject(id)).then((res) => {
@@ -35,28 +35,37 @@ export default function ProjectSettings() {
     });
     dispatch(getImages(id)).then((res) => {
       let arr = Array.from(res.payload);
-      arr.forEach((image) => {
-        images.push(image.image);
-      });
+      images = [];
+      original_images = [];
+      for (let i = 0; i < arr.length; i++) {
+        images.push(arr[i].image);
+        original_images.push(arr[i]);
+      }
+      let html = document.getElementById("images-container");
+      html.innerHTML = "";
+      for (let i = 0; i < images.length; i++)
+        html.innerHTML =
+          html.innerHTML +
+          `<img src=${images[i]} width="200px" height="200px" />`;
     });
-    console.log(images);
     return () => {
       dispatch(doneLoading());
     };
   }, [dispatch, id]);
 
-  const upload = (e) => {
-    e.preventDefault();
-    document.getElementById("images").click();
-  };
-
   const displayImages = () => {
+    let html = document.getElementById("images-container");
     html.innerHTML = "";
     for (let i = 0; i < images.length; i++)
       html.innerHTML =
         html.innerHTML +
         `<img src=${images[i]} width="200px" height="200px" />`;
     return html;
+  };
+
+  const upload = (e) => {
+    e.preventDefault();
+    document.getElementById("images").click();
   };
 
   const onChange = (e) => {
@@ -86,6 +95,19 @@ export default function ProjectSettings() {
       if (data.success) {
         setNameError("");
         setSuccessMessage(data.success);
+        if (formData.images) {
+          dispatch(getImages(id)).then((res) => {
+            let arr = Array.from(res.payload);
+            arr.forEach((image) => dispatch(deleteImage(image.id)));
+            arr = Array.from(formData.images);
+            arr.forEach((image) => {
+              let fd = new FormData();
+              fd.append("project", id);
+              fd.append("image", image, image.name);
+              dispatch(createImage(fd));
+            });
+          });
+        }
       } else {
         setNameError(data.name_error);
         setSuccessMessage("");

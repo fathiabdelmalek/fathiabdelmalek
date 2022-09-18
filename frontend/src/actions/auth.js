@@ -10,7 +10,7 @@ import instance from "../axios";
 
 export const checkAuthenticated = () => async (dispatch) => {
   try {
-    instance.get(`admin/is-authenticated/`).then((res) => {
+    instance.get(`settings/is-authenticated/`).then((res) => {
       if (res.data.isAuthenticated === "Yes") {
         dispatch({
           type: AUTHENTICATED_SUCCESS,

@@ -3,6 +3,8 @@ import {
   IMAGES_GET_FAIL,
   IMAGE_CREATE_SUCCESS,
   IMAGE_CREATE_FAIL,
+  IMAGE_DELETE_SUCCESS,
+  IMAGE_DELETE_FAIL,
 } from "../types";
 import instance from "../axios";
 
@@ -51,6 +53,27 @@ export const createImage = (data) => async (dispatch) => {
     console.log(err);
     dispatch({
       type: IMAGE_CREATE_FAIL,
+    });
+  }
+  return res;
+};
+
+export const deleteImage = (id) => async (dispatch) => {
+  let res;
+  try {
+    res = await instance.delete(`images/${id}`);
+    if (res.status === 204)
+      dispatch({
+        type: IMAGE_DELETE_SUCCESS,
+        payload: id,
+      });
+    else
+      dispatch({
+        type: IMAGE_DELETE_FAIL,
+      });
+  } catch (err) {
+    dispatch({
+      type: IMAGE_DELETE_FAIL,
     });
   }
   return res;

@@ -13,7 +13,7 @@ class Profile(models.Model):
     image = models.ImageField(verbose_name='profile image', null=True, blank=True, upload_to='images')
 
     def __str__(self):
-        return self.full_name
+        return self.name
 
     class Meta:
         verbose_name = 'Profile'

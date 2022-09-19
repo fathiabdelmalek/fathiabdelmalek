@@ -2,6 +2,7 @@ from django.utils.translation import gettext as _
 
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import AllowAny, IsAdminUser
 
 from .models import Skill
 from .serializers import SkillSerializer
@@ -10,6 +11,13 @@ from .serializers import SkillSerializer
 class SkillViewSet(ModelViewSet):
     queryset = Skill.objects.all()
     serializer_class = SkillSerializer
+
+    def get_permissions(self):
+        if self.action == 'create' or self.action == 'update' or self.action == 'partial_update' or self.action == 'destroy':
+            permission_classes = [IsAdminUser]
+        else:
+            permission_classes = [AllowAny]
+        return [permission() for permission in permission_classes]
 
     def create(self, request, *args, **kwargs):
         try:

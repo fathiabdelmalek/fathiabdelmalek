@@ -10,6 +10,14 @@ urlpatterns = [
     path('projects/', index, name='projects'),
     path('project/<int>', index, name='project'),
     path('contact/', index, name='contact'),
+    # authentication
     path('login/', index, name='login'),
     path('logout/', index, name='logout'),
+    # settings
+    path('settings/', index),
+    path('settings/profile', index),
+    path('settings/skills', index),
+    path('settings/projects', index),
+    path('settings/projects/<int>', index),
+    path('settings/projects/new', index),
 ]

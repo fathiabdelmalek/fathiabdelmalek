@@ -5,10 +5,18 @@ import { editSkill, deleteSkill } from "../../../actions/skills";
 export default function List({ skill }) {
   const dispatch = useDispatch();
   const initialFormData = Object.freeze({
+    name: "",
     value: "",
   });
   const [formData, setFormData] = useState(initialFormData);
   const [valueMessage, setValueMessage] = useState("");
+
+  useEffect(() => {
+    setFormData({
+      name: skill.name,
+      value: skill.value,
+    });
+  }, [skill.name, skill.value]);
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,7 +25,7 @@ export default function List({ skill }) {
   const onEdit = async (e) => {
     try {
       const res = await dispatch(
-        editSkill(skill.id, skill.name, formData.value)
+        editSkill(skill.id, formData.name, formData.value)
       );
       if (res.success) {
         setValueMessage(res.success);
@@ -37,13 +45,15 @@ export default function List({ skill }) {
     }
   };
 
-  useEffect(() => {
-    setFormData({ value: skill.value });
-  }, [skill.value]);
-
   return (
     <div>
-      <label htmlFor="value">{skill.name}</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={onChange}
+      />
       <input
         type="number"
         id="value"

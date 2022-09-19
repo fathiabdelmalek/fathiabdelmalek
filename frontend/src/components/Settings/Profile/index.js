@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile, editProfile } from "../../../actions/profile";
 
-export default function ProfileSettings() {
-  const profile = useSelector((state) => state.profile);
+export default function ProfileSettings({ isAuthenticated }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const profile = useSelector((state) => state.profile);
   const initialFormData = Object.freeze({
     name: "",
     job_title: "",
@@ -20,6 +22,7 @@ export default function ProfileSettings() {
   const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
+    if (!isAuthenticated) navigate(-1, { replace: true });
     dispatch(getProfile());
     setFormData({
       name: profile.payload.name,
@@ -30,6 +33,8 @@ export default function ProfileSettings() {
     setImage(profile.payload.image);
   }, [
     dispatch,
+    isAuthenticated,
+    navigate,
     profile.payload.image,
     profile.payload.job_title,
     profile.payload.name,

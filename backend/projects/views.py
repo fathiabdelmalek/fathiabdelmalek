@@ -2,6 +2,7 @@ from django.utils.translation import gettext as _
 
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import AllowAny, IsAdminUser
 
 from .models import Image, Project
 from .serializers import ImageSerializer, ProjectSerializer
@@ -11,6 +12,13 @@ class ProjectViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
+    def get_permissions(self):
+        if self.action == 'create' or self.action == 'update' or self.action == 'partial_update' or self.action == 'destroy':
+            permission_classes = [IsAdminUser]
+        else:
+            permission_classes = [AllowAny]
+        return [permission() for permission in permission_classes]
+
     def create(self, request, *args, **kwargs):
         try:
             if not request.data['name']:
@@ -18,10 +26,6 @@ class ProjectViewSet(ModelViewSet):
             serializer = self.get_serializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
-                # if 'images' in request.data:
-                #     for img in request.data['images']:
-                #         project = Project.objects.get(pk=serializer.data['id'])
-                #         Image.objects.create(project=project, image=img)
                 return Response({_('success'): _("Project created successfully"), 'id': serializer.data['id']})
             return Response({_('data_error'): _("Invalid data")})
         except Exception as e:
@@ -44,3 +48,10 @@ class ProjectViewSet(ModelViewSet):
 class ImageViewSet(ModelViewSet):
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
+
+    def get_permissions(self):
+        if self.action == 'create' or self.action == 'update' or self.action == 'partial_update' or self.action == 'destroy':
+            permission_classes = [IsAdminUser]
+        else:
+            permission_classes = [AllowAny]
+        return [permission() for permission in permission_classes]

@@ -5,23 +5,22 @@ export default function Nav({ isAuthenticated }) {
   const render = () => {
     if (isAuthenticated)
       return (
-        <div className="nav-item">
-          <h3>
-            <NavLink to={"/logout"} className="nav-link">
-              Logout
-            </NavLink>
-          </h3>
-        </div>
-      );
-    else
-      return (
-        <div className="nav-item">
-          <h3>
-            <NavLink to={"/login"} className="nav-link">
-              Login
-            </NavLink>
-          </h3>
-        </div>
+        <React.Fragment>
+          <div className="nav-item">
+            <h3>
+              <NavLink to={"/settings"} className="nav-link">
+                Settings
+              </NavLink>
+            </h3>
+          </div>
+          <div className="nav-item">
+            <h3>
+              <NavLink to={"/logout"} className="nav-link">
+                Logout
+              </NavLink>
+            </h3>
+          </div>
+        </React.Fragment>
       );
   };
 

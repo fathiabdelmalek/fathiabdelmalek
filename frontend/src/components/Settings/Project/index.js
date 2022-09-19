@@ -9,11 +9,11 @@ import {
   deleteProject,
 } from "../../../actions/project";
 
-export default function ProjectSettings() {
-  const { id } = useParams();
-  const project = useSelector((state) => state.project);
+export default function ProjectSettings({ isAuthenticated }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { id } = useParams();
+  const project = useSelector((state) => state.project);
   const initialFormData = Object.freeze({
     name: "",
     link: "",
@@ -27,9 +27,11 @@ export default function ProjectSettings() {
   let original_images = [];
 
   useEffect(() => {
+    if (!isAuthenticated) navigate(-1, { replace: true });
     dispatch(getProject(id)).then((res) => {
       setFormData({
         name: res.data.name,
+        link: res.data.link,
         description: res.data.description,
       });
     });
@@ -90,6 +92,7 @@ export default function ProjectSettings() {
       formData.name && formData.name !== ""
         ? fd.append("name", formData.name)
         : fd.append("name", null);
+      fd.append("link", formData.link);
       fd.append("description", formData.description);
       const { data } = await dispatch(editProject(id, fd));
       if (data.success) {
@@ -145,6 +148,17 @@ export default function ProjectSettings() {
                 onChange={onChange}
               />
               <p>{nameError}</p>
+            </div>
+            <div>
+              <label htmlFor="name">Project Name : </label>
+              <input
+                type="text"
+                id="link"
+                name="link"
+                value={formData.link}
+                placeholder="Enter project link"
+                onChange={onChange}
+              />
             </div>
             <div>
               <label htmlFor="description">Project description : </label>

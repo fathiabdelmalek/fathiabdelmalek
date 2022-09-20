@@ -25,6 +25,7 @@ export default function Login({ isAuthenticated }) {
       const res = await dispatch(login(formData.email, formData.password));
       if (res.success) {
         navigate("/", { replace: true });
+        document.location.reload();
       } else if (res.email_error) {
         setEmailError(res.email_error);
         setPasswordError("");

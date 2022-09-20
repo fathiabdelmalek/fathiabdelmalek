@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile, editProfile } from "../../../actions/profile";
 
-export default function ProfileSettings() {
-  const profile = useSelector((state) => state.profile);
+export default function ProfileSettings({ isAuthenticated }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const profile = useSelector((state) => state.profile);
   const initialFormData = Object.freeze({
     name: "",
     job_title: "",
@@ -18,6 +20,26 @@ export default function ProfileSettings() {
   const [phoneError, setPhoneError] = useState("");
   const [imageError, setImageError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+
+  useEffect(() => {
+    if (!isAuthenticated) navigate(-1, { replace: true });
+    dispatch(getProfile());
+    setFormData({
+      name: profile.payload.name,
+      job_title: profile.payload.job_title,
+      phone: profile.payload.phone,
+      image: profile.payload.image,
+    });
+    setImage(profile.payload.image);
+  }, [
+    dispatch,
+    isAuthenticated,
+    navigate,
+    profile.payload.image,
+    profile.payload.job_title,
+    profile.payload.name,
+    profile.payload.phone,
+  ]);
 
   const upload = (e) => {
     e.preventDefault();
@@ -81,23 +103,6 @@ export default function ProfileSettings() {
       console.log(err);
     }
   };
-
-  useEffect(() => {
-    dispatch(getProfile());
-    setFormData({
-      name: profile.payload.name,
-      job_title: profile.payload.job_title,
-      phone: profile.payload.phone,
-      image: profile.payload.image,
-    });
-    setImage(profile.payload.image);
-  }, [
-    dispatch,
-    profile.payload.image,
-    profile.payload.job_title,
-    profile.payload.name,
-    profile.payload.phone,
-  ]);
 
   return (
     <div>

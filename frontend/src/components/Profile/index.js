@@ -13,27 +13,25 @@ export default function Profile() {
   }, [dispatch]);
 
   return (
-    <div>
-      <section>
-        <a href={profile.payload.image} target="_blank" rel="noreferrer">
-          <img
-            src={profile.payload.image}
-            alt={profile.payload.name}
-            width="200px"
-            height="200px"
-          />
-        </a>
+    <div className="profile-container">
+      <section className="image-container">
+        <img src={profile.payload.image} alt={profile.payload.name} />
       </section>
-      <section>
-        <h2>Hi, I 'm {profile.loading ? "Loading" : profile.payload.name}</h2>
-        <h3> {profile.loading ? "Loading" : profile.payload.job_title} </h3>
-        <p>
+      <section className="info-container">
+        <h2 className="name">
+          Hi, I 'm {profile.loading ? "Loading" : profile.payload.name}
+        </h2>
+        <h3 className="job">
+          {" "}
+          {profile.loading ? "Loading" : profile.payload.job_title}{" "}
+        </h3>
+        <p className="email">
           <b>
             <FontAwesomeIcon icon={faAt} /> :
           </b>
           {profile.loading ? "Loading" : profile.payload.email}
         </p>
-        <p>
+        <p className="phone">
           <b>
             <FontAwesomeIcon icon={faPhone} /> :
           </b>

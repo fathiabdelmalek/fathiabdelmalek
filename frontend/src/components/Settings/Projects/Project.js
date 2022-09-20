@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { deleteProject } from "../../../actions/project";
+import { getImages } from "../../../actions/images";
 
 export default function Project({ project }) {
   const dispatch = useDispatch();
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    dispatch(getImages(project.id)).then((res) => {
+      setImage(res.payload[0].image);
+    });
+  }, [dispatch, project.id]);
 
   const onDelete = async (e) => {
     try {
@@ -15,13 +23,16 @@ export default function Project({ project }) {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <NavLink to={`/settings/projects/${project.id}`}>
-        <h3>{project.name}</h3>
+        <section className="image-section">
+          <img className="project-image" id="image" src={image} />
+        </section>
+        <section className="info-section">
+          <h3 className="project-name">{project.name}</h3>
+        </section>
       </NavLink>
-      <span>{project.likes}</span>
-      <p>{project.description}</p>
-      <button onClick={onDelete}>delete</button>
-    </div>
+      <button onClick={onDelete}>Delete</button>
+    </React.Fragment>
   );
 }

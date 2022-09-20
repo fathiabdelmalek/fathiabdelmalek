@@ -17,6 +17,7 @@ import ProfileSettings from "./components/Settings/Profile";
 import ProjectsSettings from "./components/Settings/Projects";
 import ProjectSettings from "./components/Settings/Project";
 import NewProject from "./components/Settings/Projects/New";
+import Settings from "./components/Settings";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -47,11 +48,30 @@ export default function App() {
             element={<Logout isAuthenticated={isAuthenticated} />}
           />
           {/* Settings */}
-          <Route path="/settings/profile" element={<ProfileSettings />} />
-          <Route path="/settings/skills" element={<SkillsSettings />} />
-          <Route path="/settings/projects" element={<ProjectsSettings />} />
-          <Route path="/settings/projects/:id" element={<ProjectSettings />} />
-          <Route path="/settings/projects/new" element={<NewProject />} />
+          <Route
+            path="/settings"
+            element={<Settings isAuthenticated={isAuthenticated} />}
+          />
+          <Route
+            path="/settings/profile"
+            element={<ProfileSettings isAuthenticated={isAuthenticated} />}
+          />
+          <Route
+            path="/settings/skills"
+            element={<SkillsSettings isAuthenticated={isAuthenticated} />}
+          />
+          <Route
+            path="/settings/projects"
+            element={<ProjectsSettings isAuthenticated={isAuthenticated} />}
+          />
+          <Route
+            path="/settings/projects/:id"
+            element={<ProjectSettings isAuthenticated={isAuthenticated} />}
+          />
+          <Route
+            path="/settings/projects/new"
+            element={<NewProject isAuthenticated={isAuthenticated} />}
+          />
         </Routes>
       </main>
       <Footer />

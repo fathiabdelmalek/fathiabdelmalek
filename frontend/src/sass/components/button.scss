@@ -1,0 +1,19 @@
+.btn {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+
+  &.btn-submit {
+    background-color: $main-color;
+    color: $text-color;
+    font-weight: normal;
+
+    &:hover {
+      font-weight: bolder;
+    }
+  }
+
+  &.btn-fluid {
+    width: 100%;
+  }
+}

@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { getSkills } from "../../../actions/skills";
 import Form from "./Form";
 import Skill from "./Skill";
 
-export default function SkillsSettings() {
-  const skills = useSelector((state) => state.skills);
+export default function SkillsSettings({ isAuthenticated }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const skills = useSelector((state) => state.skills);
 
   useEffect(() => {
+    if (!isAuthenticated) navigate(-1, { replace: true });
     dispatch(getSkills());
-  }, [dispatch]);
+  }, [dispatch, isAuthenticated, navigate]);
 
   return (
     <div>

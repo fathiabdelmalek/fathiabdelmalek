@@ -5,6 +5,7 @@ import profileReducer from "./reducers/profile";
 import skillsReducer from "./reducers/skills";
 import projectsReducer from "./reducers/projects";
 import projectReducer from "./reducers/project";
+import imagesReducer from "./reducers/images";
 import contactReducer from "./reducers/contact";
 import authReducer from "./reducers/auth";
 
@@ -15,6 +16,7 @@ const reducer = combineReducers({
   skills: skillsReducer,
   projects: projectsReducer,
   project: projectReducer,
+  images: imagesReducer,
   contact: contactReducer,
   auth: authReducer,
 });

@@ -10,16 +10,16 @@ import instance from "../axios";
 
 export const checkAuthenticated = () => async (dispatch) => {
   try {
-    instance.get(`admin/is-authenticated/`).then((res) => {
+    instance.get(`settings/is-authenticated/`).then((res) => {
       if (res.data.isAuthenticated === "Yes") {
-        dispatch({
+        return dispatch({
           type: AUTHENTICATED_SUCCESS,
           payload: {
             isAuthenticated: true,
           },
         });
       } else {
-        dispatch({
+        return dispatch({
           type: AUTHENTICATED_FAIL,
           payload: {
             isAuthenticated: false,
@@ -40,7 +40,7 @@ export const checkAuthenticated = () => async (dispatch) => {
 export const login = (email, password) => async (dispatch) => {
   const body = JSON.stringify({ email, password });
   try {
-    const res = await instance.post(`admin/login/`, body);
+    const res = await instance.post(`settings/login/`, body);
     if (res.data.success) {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -75,7 +75,7 @@ export const logout = () => async (dispatch) => {
     withCredentials: true,
   });
   try {
-    instance.post(`admin/logout/`, body).then((res) => {
+    instance.post(`settings/logout/`, body).then((res) => {
       if (res.data.success) {
         dispatch({
           type: LOGOUT_SUCCESS,

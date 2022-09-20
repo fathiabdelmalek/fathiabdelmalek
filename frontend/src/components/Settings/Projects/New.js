@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { createImage } from "../../../actions/images";
 import { createProject } from "../../../actions/projects";
 
 export default function NewProject() {
@@ -8,25 +9,42 @@ export default function NewProject() {
   const navigate = useNavigate();
   const initialForm = Object.freeze({
     name: "",
+    link: "",
     description: "",
-    image: null,
+    images: [],
   });
   const [formData, setFormData] = useState(initialForm);
-  const [image, setImage] = useState(null);
   const [nameError, setNameError] = useState("");
+  let images = [];
+  let html = document.getElementById("images-container");
 
   const upload = (e) => {
     e.preventDefault();
-    document.getElementById("image").click();
+    document.getElementById("images").click();
+  };
+
+  const displayImages = () => {
+    html.innerHTML = "";
+    for (let i = 0; i < images.length; i++) {
+      html.innerHTML =
+        html.innerHTML +
+        `<img src=${images[i]} width="200px" height="200px" />`;
+    }
+    return html;
   };
 
   const onChange = (e) => {
-    if (e.target.name === "image") {
+    if (e.target.name === "images") {
+      let files = e.target.files;
       setFormData({
         ...formData,
-        [e.target.name]: e.target.files[0],
+        [e.target.name]: files,
       });
-      setImage(URL.createObjectURL(e.target.files[0]));
+      images = [];
+      for (let i = 0; i < files.length; i++) {
+        images.push(URL.createObjectURL(files[i]));
+      }
+      displayImages();
     } else setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -37,17 +55,21 @@ export default function NewProject() {
       formData.name && formData.name !== ""
         ? fd.append("name", formData.name)
         : fd.append("name", null);
+      fd.append("link", formData.link);
       fd.append("description", formData.description);
-      formData.image
-        ? fd.append("image", formData.image, formData.image.name)
-        : fd.append("image", null);
-      const res = await dispatch(createProject(fd));
-      if (res.data.success) {
-        console.log(res.data);
+      const { data } = await dispatch(createProject(fd));
+      if (data.success) {
         setNameError("");
-        navigate(`/settings/projects/${res.data.id}`);
-      } else if (res.data.name_error) setNameError(res.data.name_error);
-      else if (res.data.data_error) setNameError(res.data.data_error);
+        let arr = Array.from(formData.images);
+        arr.forEach((image) => {
+          let fd = new FormData();
+          fd.append("project", data.id);
+          fd.append("image", image, image.name);
+          dispatch(createImage(fd));
+        });
+        navigate(`/settings/projects/${data.id}`);
+      } else if (data.name_error) setNameError(data.name_error);
+      else if (data.data_error) setNameError(data.data_error);
     } catch (err) {
       console.log("error in component");
       console.log(err);
@@ -58,18 +80,6 @@ export default function NewProject() {
     <div>
       <form>
         <div>
-          <img src={image} width="200px" height="200px" />
-          <input
-            style={{ display: "none" }}
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-            onChange={onChange}
-          />
-          <button onClick={upload.bind()}>Pick Image</button>
-        </div>
-        <div>
           <label htmlFor="name">Project Name : </label>
           <input
             type="text"
@@ -79,6 +89,16 @@ export default function NewProject() {
             onChange={onChange}
           />
           <p>{nameError}</p>
+        </div>
+        <div>
+          <label htmlFor="link">Project link : </label>
+          <input
+            type="text"
+            id="link"
+            name="link"
+            placeholder="Enter the project link if exist"
+            onChange={onChange}
+          />
         </div>
         <div>
           <label htmlFor="description">Project description : </label>
@@ -93,6 +113,19 @@ export default function NewProject() {
           <button type="submit" onClick={onSubmit}>
             Create
           </button>
+        </div>
+        <div>
+          <button onClick={upload.bind()}>Pick Image</button>
+          <input
+            style={{ display: "none" }}
+            type="file"
+            id="images"
+            name="images"
+            accept="image/*"
+            onChange={onChange}
+            multiple
+          />
+          <div id="images-container"></div>
         </div>
       </form>
     </div>

@@ -31,14 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # self
-    'admin.apps.AdminConfig',
+    # 'admin.apps.AdminConfig',
+    'settings.apps.SettingsConfig',
     'info.apps.InfoConfig',
     'projects.apps.ProjectsConfig',
     'skills.apps.SkillsConfig',
@@ -163,10 +164,10 @@ CORS_ALLOWED_ORIGINS = [
 
 # Other settings
 
-AUTH_USER_MODEL = 'admin.User'
-LOGOUT_REDIRECT_URL = 'index'
+AUTH_USER_MODEL = 'settings.User'
+LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'home'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

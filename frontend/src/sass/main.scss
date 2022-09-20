@@ -1,4 +1,17 @@
+@import "./helpers/variables.scss";
+
+@import "./components/button.scss";
+@import "./components/card.scss";
+
+@import "./layout/nav.scss";
+@import "./layout/footer.scss";
+
+@import "./views/profile.scss";
+@import "./views//skills.scss";
+@import "./views/projects.scss";
+@import "./views/project.scss";
+
 body {
-  background-color: #d6d6d6;
-  color: #2e2e2e;
+  background-color: $back-color;
+  color: $text-color;
 }

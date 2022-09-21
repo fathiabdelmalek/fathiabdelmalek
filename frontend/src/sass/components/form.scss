@@ -1,0 +1,17 @@
+form {
+  padding: 40px;
+
+  .form-label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .form-control {
+    display: block;
+    width: 100%;
+  }
+
+  textarea.form-control {
+    height: 142px;
+  }
+}

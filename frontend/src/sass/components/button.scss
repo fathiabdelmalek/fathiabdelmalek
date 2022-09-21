@@ -3,13 +3,19 @@
   border: none;
   border-radius: 5px;
 
-  &.btn-submit {
+  &.btn-fluid {
+    width: 100%;
+  }
+
+  &.btn-primary {
     background-color: $main-color;
     color: $text-color;
     font-weight: normal;
 
     &:hover {
+      background-color: $main-color;
       font-weight: bolder;
+      cursor: pointer;
     }
   }
 

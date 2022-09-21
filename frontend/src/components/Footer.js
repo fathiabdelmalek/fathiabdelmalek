@@ -15,22 +15,38 @@ export default function Footer() {
         Abdelmalek
       </section>
       <section className="links">
-        <a href="https://github.com/fathiabdelmalek" target="_blank">
+        <a
+          href="https://github.com/fathiabdelmalek"
+          target="_blank"
+          rel="noreferrer"
+        >
           <i>
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </i>
         </a>
-        <a href="https://facebook.com/fathiabdelmalek01" target="_blank">
+        <a
+          href="https://facebook.com/fathiabdelmalek01"
+          target="_blank"
+          rel="noreferrer"
+        >
           <i>
             <FontAwesomeIcon icon={faFacebook} size="2x" />
           </i>
         </a>
-        <a href="https://twitter.com/AbdelmalekFathi" target="_blank">
+        <a
+          href="https://twitter.com/AbdelmalekFathi"
+          target="_blank"
+          rel="noreferrer"
+        >
           <i>
             <FontAwesomeIcon icon={faTwitter} size="2x" />
           </i>
         </a>
-        <a href="https://linkedin.com/in/fathi-abdelmalek" target="_blank">
+        <a
+          href="https://linkedin.com/in/fathi-abdelmalek"
+          target="_blank"
+          rel="noreferrer"
+        >
           <i>
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </i>

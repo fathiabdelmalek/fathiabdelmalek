@@ -25,29 +25,43 @@ export default function Contact() {
   if (messageSent) navigate("/");
 
   return (
-    <div>
-      <form>
-        <CSRFToken />
-        <div>
-          <label to="email">Your Email Address : </label>
-          <input
-            required
-            id="email"
-            name="email"
-            type="email"
-            onChange={onChange}
-          />
-        </div>
-        <div>
-          <label to="body">Your Message : </label>
-          <textarea required id="body" name="body" onChange={onChange} />
-        </div>
-        <div>
-          <button type="submit" onClick={onSubmit}>
-            Send Message
-          </button>
-        </div>
-      </form>
-    </div>
+    <form>
+      <CSRFToken />
+      <h1 className="text-center mb-4">Send me a message</h1>
+      <div className="mb-3">
+        <label className="form-label" to="email">
+          Your Email Address :{" "}
+        </label>
+        <input
+          className="form-control"
+          id="email"
+          name="email"
+          type="email"
+          onChange={onChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label" to="body">
+          Your Message :{" "}
+        </label>
+        <textarea
+          className="form-control"
+          id="body"
+          name="body"
+          onChange={onChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <button
+          className="btn btn-fluid btn-primary"
+          type="submit"
+          onClick={onSubmit}
+        >
+          Send Message
+        </button>
+      </div>
+    </form>
   );
 }

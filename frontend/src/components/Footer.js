@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="container mb-4">
       <section className="developer">
         Made with <span style={{ color: "red" }}>&hearts;</span> by Fathi
         Abdelmalek

@@ -1,9 +1,7 @@
 nav {
   display: flex;
   justify-content: space-between;
-  margin: auto $side-padding;
 
-  a,
   a.nav-link {
     text-decoration: none;
     color: $second-color;

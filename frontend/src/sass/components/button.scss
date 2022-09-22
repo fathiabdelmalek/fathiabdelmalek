@@ -1,5 +1,5 @@
 .btn {
-  padding: 5px;
+  padding: $spacer * 0.75;
   border: none;
   border-radius: 5px;
 
@@ -8,12 +8,14 @@
   }
 
   &.btn-primary {
-    background-color: $main-color;
+    // background-color: $main-color;
+    background-color: $second-color;
     color: $text-color;
     font-weight: normal;
 
     &:hover {
-      background-color: $main-color;
+      background-color: $btn-hover-color;
+      border-color: $btn-hover-color;
       font-weight: bolder;
       cursor: pointer;
     }

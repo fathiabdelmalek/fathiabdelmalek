@@ -17,7 +17,6 @@ import ProfileSettings from "./components/Settings/Profile";
 import ProjectsSettings from "./components/Settings/Projects";
 import ProjectSettings from "./components/Settings/Project";
 import NewProject from "./components/Settings/Projects/New";
-import Settings from "./components/Settings";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -30,51 +29,45 @@ export default function App() {
   return (
     <BrowserRouter>
       <Nav isAuthenticated={isAuthenticated} />
-      <main>
-        <div className="container-fluid mt-4">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<Profile />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:id" element={<Project />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* Authentication */}
-            <Route
-              path={"/login"}
-              element={<Login isAuthenticated={isAuthenticated} />}
-            />
-            <Route
-              path={"/logout"}
-              element={<Logout isAuthenticated={isAuthenticated} />}
-            />
-            {/* Settings */}
-            <Route
-              path="/settings"
-              element={<Settings isAuthenticated={isAuthenticated} />}
-            />
-            <Route
-              path="/settings/profile"
-              element={<ProfileSettings isAuthenticated={isAuthenticated} />}
-            />
-            <Route
-              path="/settings/skills"
-              element={<SkillsSettings isAuthenticated={isAuthenticated} />}
-            />
-            <Route
-              path="/settings/projects"
-              element={<ProjectsSettings isAuthenticated={isAuthenticated} />}
-            />
-            <Route
-              path="/settings/projects/:id"
-              element={<ProjectSettings isAuthenticated={isAuthenticated} />}
-            />
-            <Route
-              path="/settings/projects/new"
-              element={<NewProject isAuthenticated={isAuthenticated} />}
-            />
-          </Routes>
-        </div>
+      <main className="container my-5">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<Profile />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<Project />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* Authentication */}
+          <Route
+            path={"/login"}
+            element={<Login isAuthenticated={isAuthenticated} />}
+          />
+          <Route
+            path={"/logout"}
+            element={<Logout isAuthenticated={isAuthenticated} />}
+          />
+          {/* Settings */}
+          <Route
+            path="/settings/profile"
+            element={<ProfileSettings isAuthenticated={isAuthenticated} />}
+          />
+          <Route
+            path="/settings/skills"
+            element={<SkillsSettings isAuthenticated={isAuthenticated} />}
+          />
+          <Route
+            path="/settings/projects"
+            element={<ProjectsSettings isAuthenticated={isAuthenticated} />}
+          />
+          <Route
+            path="/settings/projects/:id"
+            element={<ProjectSettings isAuthenticated={isAuthenticated} />}
+          />
+          <Route
+            path="/settings/projects/new"
+            element={<NewProject isAuthenticated={isAuthenticated} />}
+          />
+        </Routes>
       </main>
       <Footer />
     </BrowserRouter>

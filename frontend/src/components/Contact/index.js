@@ -29,8 +29,8 @@ export default function Contact() {
       <CSRFToken />
       <h1 className="text-center mb-4">Send me a message</h1>
       <div className="mb-3">
-        <label className="form-label" to="email">
-          Your Email Address :{" "}
+        <label className="form-label" htmlFor="email">
+          Your Email Address
         </label>
         <input
           className="form-control"
@@ -42,8 +42,8 @@ export default function Contact() {
         />
       </div>
       <div className="mb-3">
-        <label className="form-label" to="body">
-          Your Message :{" "}
+        <label className="form-label" htmlFor="body">
+          Your Message
         </label>
         <textarea
           className="form-control"

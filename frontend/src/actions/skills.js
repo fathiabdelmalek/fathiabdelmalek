@@ -11,20 +11,24 @@ import {
 import instance from "../axios";
 
 export const getSkills = () => async (dispatch) => {
-  setTimeout(() => {
-    try {
-      instance.get(`skills`).then((res) => {
-        dispatch({
-          type: SKILLS_GET_SUCCESS,
-          payload: res.data,
-        });
+  let res;
+  try {
+    res = await instance.get(`skills`);
+    if (res.status === 200)
+      dispatch({
+        type: SKILLS_GET_SUCCESS,
+        payload: res.data,
       });
-    } catch (e) {
+    else
       dispatch({
         type: SKILLS_GET_FAIL,
       });
-    }
-  }, 1000);
+  } catch (e) {
+    dispatch({
+      type: SKILLS_GET_FAIL,
+    });
+  }
+  return res;
 };
 
 export const createSkill = (name, value) => async (dispatch) => {

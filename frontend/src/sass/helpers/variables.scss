@@ -1,9 +1,24 @@
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  auto: auto,
+) !default;
+
+$sides: (top, bottom, left, right);
+$axises: (x, y);
+
 // colors
 $main-color: #14bdeb;
 $second-color: #58d8c8;
 $text-color: #f8f9fa;
 $back-color: #212529;
 $shadow-color: #313539;
+$btn-hover-color: #30b0a0;
 
 // spaces
 $side-padding: 50px;

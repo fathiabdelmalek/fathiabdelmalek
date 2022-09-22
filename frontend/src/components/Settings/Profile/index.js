@@ -105,63 +105,74 @@ export default function ProfileSettings({ isAuthenticated }) {
   };
 
   return (
-    <div>
-      <form>
-        <section>
-          <img src={image} alt={formData.name} width="200px" height="200px" />
+    <form className="flex-form">
+      <section className="form-image">
+        <img src={image} alt={formData.name} width="200px" height="200px" />
+        <input
+          style={{ display: "none" }}
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+          onChange={onChange}
+        />
+        <button onClick={upload.bind()}>Pick Image</button>
+        <p>{imageError}</p>
+      </section>
+      <section className="form-data">
+        <div className="mb-3">
+          <label className="form-label" htmlFor="name">
+            Name
+          </label>
           <input
-            style={{ display: "none" }}
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
+            className="form-control"
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
             onChange={onChange}
           />
-          <button onClick={upload.bind()}>Pick Image</button>
-          <p>{imageError}</p>
-        </section>
-        <section>
-          <div>
-            <label htmlFor="name">Name : </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={onChange}
-            />
-            <p>{nameError}</p>
-          </div>
-          <div>
-            <label htmlFor="job_title">Job Title : </label>
-            <input
-              type="text"
-              id="job_title"
-              name="job_title"
-              value={formData.job_title}
-              onChange={onChange}
-            />
-            <p>{jobTitleError}</p>
-          </div>
-          <div>
-            <label htmlFor="phone">Phone Number : </label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={onChange}
-            />
-            <p>{phoneError}</p>
-          </div>
-          <div>
-            <button type="submit" onClick={onSubmit}>
-              Save
-            </button>
-          </div>
-          <p>{successMessage}</p>
-        </section>
-      </form>
-    </div>
+          <p>{nameError}</p>
+        </div>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="job_title">
+            Job Title
+          </label>
+          <input
+            className="form-control"
+            type="text"
+            id="job_title"
+            name="job_title"
+            value={formData.job_title}
+            onChange={onChange}
+          />
+          <p>{jobTitleError}</p>
+        </div>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="phone">
+            Phone Number
+          </label>
+          <input
+            className="form-control"
+            type="text"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={onChange}
+          />
+          <p>{phoneError}</p>
+        </div>
+        <div>
+          <button
+            className="btn btn-fluid btn-primary"
+            type="submit"
+            onClick={onSubmit}
+          >
+            Save
+          </button>
+        </div>
+        <p>{successMessage}</p>
+      </section>
+    </form>
   );
 }

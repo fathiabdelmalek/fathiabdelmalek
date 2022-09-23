@@ -17,7 +17,6 @@ import ProfileSettings from "./components/Settings/Profile";
 import ProjectsSettings from "./components/Settings/Projects";
 import ProjectSettings from "./components/Settings/Project";
 import NewProject from "./components/Settings/Projects/New";
-import Settings from "./components/Settings";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -25,12 +24,12 @@ export default function App() {
 
   useEffect(() => {
     dispatch(checkAuthenticated());
-  }, []);
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
       <Nav isAuthenticated={isAuthenticated} />
-      <main>
+      <main className="container my-5">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<Profile />} />
@@ -48,10 +47,6 @@ export default function App() {
             element={<Logout isAuthenticated={isAuthenticated} />}
           />
           {/* Settings */}
-          <Route
-            path="/settings"
-            element={<Settings isAuthenticated={isAuthenticated} />}
-          />
           <Route
             path="/settings/profile"
             element={<ProfileSettings isAuthenticated={isAuthenticated} />}

@@ -1,15 +1,15 @@
 nav {
   display: flex;
   justify-content: space-between;
-  margin: auto $side-padding;
 
-  a {
+  a.nav-link {
     text-decoration: none;
     color: $second-color;
 
     &:hover {
       color: $main-color;
-      font-size: large;
+      font-size: larger;
+      font-weight: bold;
     }
   }
 }

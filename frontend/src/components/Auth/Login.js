@@ -46,39 +46,46 @@ export default function Login({ isAuthenticated }) {
   }, [isAuthenticated, navigate]);
 
   return (
-    <div>
-      <div>
-        <form>
-          <CSRFToken />
-          <div>
-            <label to="email">Email Address : </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email Address"
-              onChange={onChange}
-            />
-            <p>{emailError}</p>
-          </div>
-          <div>
-            <label to="password">Password : </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              onChange={onChange}
-            />
-            <p>{passwordError}</p>
-          </div>
-          <div>
-            <button type="submit" onClick={onSubmit}>
-              Login
-            </button>
-          </div>
-        </form>
+    <form>
+      <CSRFToken />
+      <h1 className="text-center mb-5">Login</h1>
+      <div className="mb-3">
+        <label className="form-label" htmlFor="email">
+          Email Address
+        </label>
+        <input
+          className="form-control"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email Address"
+          onChange={onChange}
+        />
+        <p>{emailError}</p>
       </div>
-    </div>
+      <div className="mb-3">
+        <label className="form-label" htmlFor="password">
+          Password
+        </label>
+        <input
+          className="form-control"
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          onChange={onChange}
+        />
+        <p>{passwordError}</p>
+      </div>
+      <div>
+        <button
+          className="btn btn-fluid btn-primary"
+          type="submit"
+          onClick={onSubmit}
+        >
+          Login
+        </button>
+      </div>
+    </form>
   );
 }

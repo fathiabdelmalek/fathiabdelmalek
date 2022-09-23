@@ -1,15 +1,23 @@
 .btn {
-  padding: 5px;
+  padding: $spacer * 0.75;
   border: none;
   border-radius: 5px;
 
-  &.btn-submit {
-    background-color: $main-color;
+  &.btn-fluid {
+    width: 100%;
+  }
+
+  &.btn-primary {
+    // background-color: $main-color;
+    background-color: $second-color;
     color: $text-color;
     font-weight: normal;
 
     &:hover {
+      background-color: $btn-hover-color;
+      border-color: $btn-hover-color;
       font-weight: bolder;
+      cursor: pointer;
     }
   }
 

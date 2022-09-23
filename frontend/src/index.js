@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import "normalize.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/main.scss";
 import App from "./App";
 import store from "./store";

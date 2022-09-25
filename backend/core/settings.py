@@ -162,6 +162,18 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8080',
 ]
 
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
 # Other settings
 
 AUTH_USER_MODEL = 'settings.User'

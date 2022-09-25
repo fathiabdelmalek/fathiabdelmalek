@@ -18,12 +18,24 @@ form {
   .form-control {
     display: block;
     width: 100%;
+    background-color: $text-color;
+    background-clip: padding-box;
     padding: $spacer * 0.375 $spacer * 0.75;
     border: 1px solid $second-color;
     border-radius: $spacer * 0.375;
     color: $back-color;
     box-sizing: border-box;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none;
+    // transition: border-color $main-duration ease-in-out,
+    //   box-shadow $main-duration ease-in-out;
+    transition: $main-duration;
+
+    &:focus {
+      // border: 1px solid $main-color;
+      // transition: border-color $main-duration ease-in-out,
+      //   box-shadow $main-duration ease-in-out;
+      transition: $main-duration;
+    }
   }
 
   textarea.form-control {

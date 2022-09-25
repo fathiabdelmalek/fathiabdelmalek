@@ -22,7 +22,7 @@ export default function CSRFToken() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await instance.get(`admin/csrf-cookie`);
+        await instance.get(`settings/csrf-cookie`);
       } catch (err) {}
     };
     fetchData();

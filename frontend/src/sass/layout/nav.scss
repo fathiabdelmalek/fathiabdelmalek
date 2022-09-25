@@ -5,11 +5,13 @@ nav {
   a.nav-link {
     text-decoration: none;
     color: $second-color;
+    transition: $main-duration;
 
     &:hover {
       color: $main-color;
       font-size: larger;
       font-weight: bold;
+      transition: $main-duration;
     }
   }
 }

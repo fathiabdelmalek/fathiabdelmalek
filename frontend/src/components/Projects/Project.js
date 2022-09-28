@@ -14,11 +14,13 @@ export default function Project({ project }) {
   }, [dispatch, project.id]);
 
   return (
-    <NavLink to={`/projects/${project.id}`}>
-      <section className="image-section">
-        <img className="project-image" id="image" src={image} />
+    <NavLink className="card" to={`/projects/${project.id}`}>
+      <section className="card-header">
+        <figure>
+          <img className="img img-projects" id="image" src={image} />
+        </figure>
       </section>
-      <section className="info-section">
+      <section className="card-body">
         <h3 className="project-name">{project.name}</h3>
       </section>
     </NavLink>

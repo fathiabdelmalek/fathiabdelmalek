@@ -57,7 +57,7 @@ export default function Project() {
         <React.Fragment>
           <section className="project-image">
             <button onClick={previous}>Previous</button>
-            <img id="image" src={image} />
+            <img className="img img-project" id="image" src={image} />
             <button onClick={next}>Next</button>
           </section>
           <section className="project-info">

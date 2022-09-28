@@ -22,16 +22,16 @@ export default function Login({ isAuthenticated }) {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await dispatch(login(formData.email, formData.password));
-      if (res.success) {
+      const { data } = await dispatch(login(formData.email, formData.password));
+      if (data.success) {
         navigate("/", { replace: true });
         document.location.reload();
-      } else if (res.email_error) {
-        setEmailError(res.email_error);
+      } else if (data.email_error) {
+        setEmailError(data.email_error);
         setPasswordError("");
-      } else if (res.password_error) {
+      } else if (data.password_error) {
         setEmailError("");
-        setPasswordError(res.password_error);
+        setPasswordError(data.password_error);
       }
     } catch (err) {
       console.log(err);

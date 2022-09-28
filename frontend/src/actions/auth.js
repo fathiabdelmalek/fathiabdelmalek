@@ -38,9 +38,10 @@ export const checkAuthenticated = () => async (dispatch) => {
 };
 
 export const login = (email, password) => async (dispatch) => {
+  let res;
   const body = JSON.stringify({ email, password });
   try {
-    const res = await instance.post(`settings/login/`, body);
+    res = await instance.post(`settings/login/`, body);
     if (res.data.success) {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -62,12 +63,13 @@ export const login = (email, password) => async (dispatch) => {
         },
       });
     }
-    return res.data;
+    return res;
   } catch (err) {
     dispatch({
       type: LOGIN_FAIL,
     });
   }
+  return res;
 };
 
 export const logout = () => async (dispatch) => {

@@ -15,7 +15,11 @@ export default function Profile() {
   return (
     <div className="profile-container">
       <section className="image-container">
-        <img src={profile.payload.image} alt={profile.payload.name} />
+        <img
+          className="img img-profile"
+          src={profile.payload.image}
+          alt={profile.payload.name}
+        />
       </section>
       <section className="info-container">
         <h2 className="name">

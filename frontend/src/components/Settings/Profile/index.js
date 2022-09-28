@@ -107,7 +107,7 @@ export default function ProfileSettings({ isAuthenticated }) {
   return (
     <form className="flex-form">
       <section className="form-image">
-        <img src={image} alt={formData.name} width="200px" height="200px" />
+        <img className="img img-edit-profile" src={image} alt={formData.name} />
         <input
           style={{ display: "none" }}
           type="file"
@@ -116,7 +116,9 @@ export default function ProfileSettings({ isAuthenticated }) {
           accept="image/*"
           onChange={onChange}
         />
-        <button onClick={upload.bind()}>Pick Image</button>
+        <button className="btn btn-fluid btn-upload" onClick={upload.bind()}>
+          Pick Image
+        </button>
         <p>{imageError}</p>
       </section>
       <section className="form-data">

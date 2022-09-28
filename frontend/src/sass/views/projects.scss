@@ -17,27 +17,5 @@
       color: $second-color;
       font-weight: bolder;
     }
-
-    .image-section {
-      .project-image {
-        width: 350px;
-      }
-    }
-
-    .info-section {
-      position: relative;
-
-      .project-name {
-        margin-left: 10px;
-        text-align: center;
-      }
-
-      .project-likes {
-        margin: auto;
-        margin-right: 10px;
-        font-size: 20px;
-        color: $text-color;
-      }
-    }
   }
 }

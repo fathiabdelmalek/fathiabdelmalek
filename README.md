@@ -1,29 +1,62 @@
-# About Me
+<div align="center">
 
-I'm Fathi Abdelmalek from Algeria, a computer science student with Bachelor's Degree, I'm full-stack developer with (React, Redux, SCSS, Django, Django Rest Framework).
+# Hi, guys! 👋
 
-I am a self-motivated with a solid work ethic and a productive self-starter, which alongside my aptitude for learning, keeps me updated.
+**Welcome to my page!**
 
-I am an ambitious man with rich experience.
+_I'm Fathi Abdelmalek from Algeria._  
+_I'm a computer science student with Bachelor's Degree._  
+_I'm a full-stack developer with **Django** and **React**._  
+_Currently learning to walk in ML/DL without falling on my bottom._  
+_Open to collaborating on interesting and innovative projects._
 
-# Technologies
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/fathi-abdelmalek)
 
-![git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+# My skills
 
-# Projects
+## Languages
 
-[![](https://github-readme-stats.vercel.app/api/pin/?username=fathiabdelmalek&repo=py-fds&hide_border=true&theme=dark)](https://github.com/FathiAbdelMalek/py-fds)
-[![](https://github-readme-stats.vercel.app/api/pin/?username=fathiabdelmalek&repo=MemoirProjet&hide_border=true&theme=dark)](https://github.com/FathiAbdelMalek/MemoirProjet)
-[![](https://github-readme-stats.vercel.app/api/pin/?username=fathiabdelmalek&repo=MyDebts&hide_border=true&theme=dark)](https://github.com/FathiAbdelMalek/MyDebts)
-[![](https://github-readme-stats.vercel.app/api/pin/?username=fathiabdelmalek&repo=f-passwords-generator&hide_border=true&theme=dark)](https://github.com/FathiAbdelMalek/f-passwords-generator)
+[![html5](https://img.shields.io/badge/html5-black?style=for-the-badge&logo=html5)](https://hub.docker.com/u/fathiabdelmalek)
+[![css3](https://img.shields.io/badge/css3-black?style=for-the-badge&logo=css3)](https://hub.docker.com/u/fathiabdelmalek)
+[![javascript](https://img.shields.io/badge/javascript-black?style=for-the-badge&logo=javascript)](https://github.com/fathiabdelmalek)
+[![python](https://img.shields.io/badge/python-black?style=for-the-badge&logo=python)](https://github.com/fathiabdelmalek)
+[![sql](https://img.shields.io/badge/sql-black?style=for-the-badge&logo=mysql)](https://github.com/fathiabdelmalek)
 
-# Github Profile Details
+## Frameworks
 
-<p align="center">
-	<p align="center"><img width="450em" src="https://github-readme-stats.vercel.app/api?username=fathiabdelmalek&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=dark" /></p>
-	<p align="center"><img width="450em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=fathiabdelmalek&layout=compact&custom_title=Most used languages by LOCs&langs_count=10&include_all_commits=true&hide_progress=true&hide_border=true&theme=dark&hide="></p>
-  <p align="center"><img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=fathiabdelmalek&theme=github_dark" alt="TopCodeBeast" align = "center"/></p>
-</p>
+[![sass](https://img.shields.io/badge/sass-black?style=for-the-badge&logo=sass)](https://hub.docker.com/u/fathiabdelmalek)
+[![react](https://img.shields.io/badge/react-black?style=for-the-badge&logo=react)](https://github.com/fathiabdelmalek)
+[![redux](https://img.shields.io/badge/redux-black?style=for-the-badge&logo=redux)](https://github.com/fathiabdelmalek)
+[![django](https://img.shields.io/badge/django-black?style=for-the-badge&logo=django)](https://github.com/fathiabdelmalek)
+[![mysql](https://img.shields.io/badge/mysql-black?style=for-the-badge&logo=mysql)](https://github.com/fathiabdelmalek)
+
+## Technologies
+
+[![git](https://img.shields.io/badge/Git-black?style=for-the-badge&logo=git)](https://github.com/fathiabdelmalek)
+[![NodeJS](https://img.shields.io/badge/NodeJS-black?style=for-the-badge&logo=nodejs)](https://github.com/fathiabdelmalek)
+[![docker](https://img.shields.io/badge/docker-black?style=for-the-badge&logo=docker)](https://github.com/fathiabdelmalek)
+
+## ML/DL
+
+[![NumPy](https://img.shields.io/badge/numpy-black?style=for-the-badge&logo=numpy)](https://github.com/fathiabdelmalek)
+[![Pandas](https://img.shields.io/badge/pandas-black?style=for-the-badge&logo=pandas)](https://github.com/fathiabdelmalek)
+[![Scikit-Learn](https://img.shields.io/badge/scikit--learn-black?style=for-the-badge&logo=scikit-learn)](https://github.com/fathiabdelmalek)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-black?style=for-the-badge&logo=TensorFlow)](https://github.com/fathiabdelmalek)
+
+## OS
+
+[![linux](https://img.shields.io/badge/linux-black?style=for-the-badge&logo=Linux)](https://github.com/fathiabdelmalek)
+[![fedora](https://img.shields.io/badge/fedora-black?style=for-the-badge&logo=fedora)](https://github.com/fathiabdelmalek)
+[![windows](https://img.shields.io/badge/Windows-black?style=for-the-badge&logo=Windows)](https://github.com/fathiabdelmalek)
+
+# Github Stats
+
+  <p align="center"><img width="450em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=fathiabdelmalek&layout=compact&custom_title=Most used languages by LOCs&langs_count=10&include_all_commits=true&hide_progress=true&hide_border=true&theme=transparent&hide="></p>
+
+  <p align="center"><img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=fathiabdelmalek&theme=transparent" alt="TopCodeBeast" align = "center"/></p>
+
+  <p align="center"><img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=fathiabdelmalek&theme=transparent" /></p>
+
+  <p align="center"><img src="https://github-readme-streak-stats.herokuapp.com/?user=fathiabdelmalek&hide_border=true&card_width=338&theme=transparent" /></p>
+
+</div>

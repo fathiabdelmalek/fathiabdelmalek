@@ -60,8 +60,6 @@ _Open to collaborating on interesting and innovative projects._
 
 # Github Stats
 
-  <p align="center"><img width="450em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=fathiabdelmalek&layout=compact&custom_title=Most used languages by LOCs&langs_count=10&include_all_commits=true&hide_progress=true&hide_border=true&theme=transparent&hide="></p>
-
   <p align="center"><img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=fathiabdelmalek&theme=transparent&hide=" alt="TopCodeBeast" align = "center"/></p>
 
   <p align="center"><img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=fathiabdelmalek&theme=transparent&hide=" /></p>

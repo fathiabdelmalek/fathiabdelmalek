@@ -73,8 +73,9 @@ _Open to collaborating on interesting and innovative projects._
 
   <p align="center"><img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=fathiabdelmalek&theme=transparent&hide=" alt="TopCodeBeast" align = "center"/></p>
 
-  <p align="center"><img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=fathiabdelmalek&theme=transparent&hide=" /></p>
-
-  <p align="center"><img src="https://github-readme-streak-stats.herokuapp.com/?user=fathiabdelmalek&hide_border=true&card_width=338&theme=transparent&hide=" /></p>
+  <p align="center">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=fathiabdelmalek&hide_border=true&card_width=338&theme=transparent&hide=" />
+    <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=fathiabdelmalek&theme=transparent&hide=" />
+  </p>
 
 </div>

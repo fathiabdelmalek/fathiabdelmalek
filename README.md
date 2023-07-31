@@ -5,9 +5,8 @@
 **Welcome to my profile!**
 
 _I'm Fathi Abdelmalek from Algeria._  
-_I'm a computer science student with Bachelor's Degree._  
+_I'm a computer science student with a Master's Degree._  
 _I'm a full-stack developer with **Django** and **React**._  
-_Currently learning to walk in ML/DL without falling on my bottom._  
 _Open to collaborating on interesting and innovative projects._
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/fathi-abdelmalek)

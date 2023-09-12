@@ -27,6 +27,7 @@ _Open to collaborating on interesting and innovative projects._
 [![kotlin](https://img.shields.io/badge/kotlin-black?style=for-the-badge&logo=kotlin)](https://github.com/fathiabdelmalek)
 [![php](https://img.shields.io/badge/php-black?style=for-the-badge&logo=php)](https://github.com/fathiabdelmalek)
 [![java](https://img.shields.io/badge/java-black?style=for-the-badge&logo=java)](https://github.com/fathiabdelmalek)
+[![bash](https://img.shields.io/badge/bash-black?style=for-the-badge&logo=bash)](https://github.com/fathiabdelmalek)
 [![sql](https://img.shields.io/badge/sql-black?style=for-the-badge&logo=sql)](https://github.com/fathiabdelmalek)
 
 ## Frameworks and Technologies
@@ -40,6 +41,7 @@ _Open to collaborating on interesting and innovative projects._
 ### Back-end
 
 [![django](https://img.shields.io/badge/django-black?style=for-the-badge&logo=django)](https://github.com/fathiabdelmalek)
+[![Flask](https://img.shields.io/badge/flask-black?style=for-the-badge&logo=flask)](https://github.com/fathiabdelmalek)
 
 ### DBMS
 

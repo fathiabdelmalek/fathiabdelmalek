@@ -1,82 +1,200 @@
 <div align="center">
-
-# Hi, guys! 👋
-
-**Welcome to my profile!**
-
-_I'm Fathi Abdelmalek from Algeria._  
-_I'm a computer science student with a Master's degree in information systems._  
-_I'm a full-stack developer with **Django** and **React**._  
-_Open to collaborating on interesting and innovative projects._
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/fathi-abdelmalek)
-[![Twitter](https://img.shields.io/badge/Twitter-blue?style=flat-square&logo=twitter)](https://twitter.com/fathiabdelmale1)
-[![Facebook](https://img.shields.io/badge/Facebook-blue?style=flat-square&logo=facebook)](https://www.facebook.com/fathi.abdelmalek.01/)
-
-# My skills
-
-## Languages
-
-[![html5](https://img.shields.io/badge/html5-black?style=for-the-badge&logo=html5)](https://hub.docker.com/u/fathiabdelmalek)
-[![css3](https://img.shields.io/badge/css3-black?style=for-the-badge&logo=css3)](https://hub.docker.com/u/fathiabdelmalek)
-[![javascript](https://img.shields.io/badge/javascript-black?style=for-the-badge&logo=javascript)](https://github.com/fathiabdelmalek)
-[![python](https://img.shields.io/badge/python-black?style=for-the-badge&logo=python)](https://github.com/fathiabdelmalek)
-[![c](https://img.shields.io/badge/c-black?style=for-the-badge&logo=c)](https://github.com/fathiabdelmalek)
-[![c++](https://img.shields.io/badge/c++-black?style=for-the-badge&logo=cplusplus)](https://github.com/fathiabdelmalek)
-[![c#](https://img.shields.io/badge/csharp-black?style=for-the-badge&logo=csharp)](https://github.com/fathiabdelmalek)
-[![kotlin](https://img.shields.io/badge/kotlin-black?style=for-the-badge&logo=kotlin)](https://github.com/fathiabdelmalek)
-[![php](https://img.shields.io/badge/php-black?style=for-the-badge&logo=php)](https://github.com/fathiabdelmalek)
-[![java](https://img.shields.io/badge/java-black?style=for-the-badge&logo=java)](https://github.com/fathiabdelmalek)
-[![bash](https://img.shields.io/badge/bash-black?style=for-the-badge&logo=bash)](https://github.com/fathiabdelmalek)
-[![sql](https://img.shields.io/badge/sql-black?style=for-the-badge&logo=sql)](https://github.com/fathiabdelmalek)
-
-## Frameworks and Technologies
-
-### Front-end
-
-[![sass](https://img.shields.io/badge/sass-black?style=for-the-badge&logo=sass)](https://hub.docker.com/u/fathiabdelmalek)
-[![react](https://img.shields.io/badge/ract-black?style=for-the-badge&logo=react)](https://github.com/fathiabdelmalek)
-[![redux](https://img.shields.io/badge/redux-black?style=for-the-badge&logo=redux)](https://github.com/fathiabdelmalek)
-
-### Back-end
-
-[![django](https://img.shields.io/badge/django-black?style=for-the-badge&logo=django)](https://github.com/fathiabdelmalek)
-[![Flask](https://img.shields.io/badge/flask-black?style=for-the-badge&logo=flask)](https://github.com/fathiabdelmalek)
-
-### DBMS
-
-[![mysql](https://img.shields.io/badge/mysql-black?style=for-the-badge&logo=mysql)](https://github.com/fathiabdelmalek)
-[![postgresql](https://img.shields.io/badge/postgresql-black?style=for-the-badge&logo=postgresql)](https://github.com/fathiabdelmalek)
-[![sqlite](https://img.shields.io/badge/sqlite-black?style=for-the-badge&logo=sqlite)](https://github.com/fathiabdelmalek)
-
-### Data science and ML/DL
-
-[![numpy](https://img.shields.io/badge/numpy-black?style=for-the-badge&logo=numpy)](https://github.com/fathiabdelmalek)
-[![pandas](https://img.shields.io/badge/pandas-black?style=for-the-badge&logo=pandas)](https://github.com/fathiabdelmalek)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-black?style=for-the-badge&logo=scikit-learn)](https://github.com/fathiabdelmalek)
-[![tensorflow](https://img.shields.io/badge/TensorFlow-black?style=for-the-badge&logo=TensorFlow)](https://github.com/fathiabdelmalek)
-
-### Other technologies
-
-[![latex](https://img.shields.io/badge/latex-black?style=for-the-badge&logo=latex)](https://github.com/fathiabdelmalek)
-[![git](https://img.shields.io/badge/Git-black?style=for-the-badge&logo=git)](https://github.com/fathiabdelmalek)
-[![nodejs](https://img.shields.io/badge/node--js-black?style=for-the-badge&logo=nodedotjs)](https://github.com/fathiabdelmalek)
-[![webpack](https://img.shields.io/badge/webpack-black?style=for-the-badge&logo=webpack)](https://github.com/fathiabdelmalek)
-[![docker](https://img.shields.io/badge/docker-black?style=for-the-badge&logo=docker)](https://github.com/fathiabdelmalek)
-
-## OS
-
-[![linux](https://img.shields.io/badge/linux-black?style=for-the-badge&logo=Linux)](https://github.com/fathiabdelmalek)
-[![fedora](https://img.shields.io/badge/fedora-black?style=for-the-badge&logo=fedora)](https://github.com/fathiabdelmalek)
-[![windows](https://img.shields.io/badge/Windows-black?style=for-the-badge&logo=Windows)](https://github.com/fathiabdelmalek)
-
-# Github Stats
-
-  <p align="center"><img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=fathiabdelmalek&theme=transparent&hide=" alt="TopCodeBeast" align = "center"/></p>
-
-  <p align="center">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=fathiabdelmalek&hide_border=true&card_width=338&theme=transparent&hide=" />
-    <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=fathiabdelmalek&theme=transparent&hide=" />
-  </p>
-
+  <img height="150" src="https://camo.githubusercontent.com/62da68eb62b1e5f175f7d1f0191dd89a653d7908feb22d37d4a0ab07365d6791/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f4d3967624264396e6244724f5475314d71782f67697068792e676966"  />
 </div>
+
+###
+
+<h1 align="center">hey there 👋</h1>
+
+###
+
+<h2 align="center">👩‍💻  Welcome to my Profile</h2>
+
+###
+
+<p align="center">I'm Fathi Abdelmalek from Algeria<br><br>- 🔭 I’m a Software Engineer and a Web Developer<br>- 📚 I'm a computer science student with a Master's degree<br>- ⚡ In my free time I work on "Passwords Generator CLI"<br>- 💬 Ask me about Python, web development, data structures and algorithms</p>
+
+###
+
+<div align="center">
+  <a href="https://www.linkedin.com/in/fathi-abdelmalek/" target="_blank">
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
+  </a>
+  <a href="https://twitter.com/fathiabdelmale1" target="_blank">
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg" width="52" height="40" alt="twitter logo"  />
+  </a>
+  <a href="https://www.facebook.com/fathi.abdelmalek.01/" target="_blank">
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/facebook/default.svg" width="52" height="40" alt="facebook logo"  />
+  </a>
+  <a href="https://www.hackerrank.com/abdelmalek_fath1" target="_blank">
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/hackerrank/default.svg" width="52" height="40" alt="hackerrank logo"  />
+  </a>
+</div>
+
+###
+
+<h2 align="center">🛠 Languages and Tools</h2>
+
+###
+
+<h3 align="center">Languages</h3>
+
+###
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="30" alt="c logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="30" alt="cplusplus logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="30" alt="csharp logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="30" alt="java logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" height="30" alt="kotlin logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="30" alt="php logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="30" alt="bash logo"  />
+</div>
+
+###
+
+<h3 align="center">Frameworks and Technologies</h3>
+
+###
+
+<h4 align="center">Front-End</h4>
+
+###
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="30" alt="bootstrap logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="30" alt="sass logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" height="30" alt="redux logo"  />
+</div>
+
+###
+
+<h4 align="center">Back-End</h4>
+
+###
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" height="30" alt="django logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" height="30" alt="flask logo"  />
+</div>
+
+###
+
+<h4 align="center">DBMS</h4>
+
+###
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="30" alt="mysql logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="30" alt="postgresql logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" height="30" alt="sqlite logo"  />
+</div>
+
+###
+
+<h4 align="center">Data Science and Deep Learning</h4>
+
+###
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="30" alt="numpy logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" height="30" alt="pandas logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" height="30" alt="tensorflow logo"  />
+</div>
+
+###
+
+<h4 align="center">Other Technologies</h4>
+
+###
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg" height="30" alt="latex logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="30" alt="git logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="30" alt="github logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="30" alt="nodejs logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" height="30" alt="webpack logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="30" alt="docker logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="30" alt="arduino logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="30" alt="npm logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qt/qt-original.svg" height="30" alt="qt logo"  />
+</div>
+
+###
+
+<h4 align="center">Operating Systems</h4>
+
+###
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" height="30" alt="windows8 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="30" alt="linux logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fedora/fedora-original.svg" height="30" alt="fedora logo"  />
+</div>
+
+###
+
+<h4 align="center">Editors</h4>
+
+###
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="30" alt="vscode logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vim/vim-original.svg" height="30" alt="vim logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" height="30" alt="pycharm logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" height="30" alt="androidstudio logo"  />
+</div>
+
+###
+
+<h2 align="center">🔥   My Stats</h2>
+
+###
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=fathiabdelmalek&hide_title=true&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=transparent&locale=en&hide_border=true&order=1" height="250" alt="stats graph"  />
+  <img src="https://streak-stats.demolab.com?user=fathiabdelmalek&locale=en&mode=daily&theme=transparent&hide_border=true&border_radius=5&order=3" height="220" alt="streak graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=fathiabdelmalek&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=4&theme=transparent&hide_border=true&order=2" height="150" alt="languages graph"  />
+</div>
+
+###
+
+<img src="https://raw.githubusercontent.com/fathiabdelmalek/fathiabdelmalek/output/snake.svg" alt="Snake animation" />
+
+###

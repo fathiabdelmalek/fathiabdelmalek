@@ -12,7 +12,7 @@
 
 ###
 
-<p align="center">I'm Fathi Abdelmalek from Algeria<br><br>- 🔭 I’m a Software Engineer and a Web Developer<br>- 📚 I'm a computer science student with a Master's degree<br>- ⚡ In my free time I work on "Passwords Generator CLI"<br>- 💬 Ask me about Python, web development, data structures and algorithms</p>
+<p align="center">I'm Fathi Abdelmalek from Algeria<br><br>- 🔭 I’m a Software Engineer and a Web Developer<br>- 📚 I'm a computer science student with a Master's degree<br>- ⚡ In my free time I work on <a href="https://github.com/fathiabdelmalek/PassGenCLI.git"><b>Passwords Generator CLI</b></a><br>- 💬 Ask me about <b>python, web development, data structures and algorithms</b><br>- 📫 How to reach me <a href="mailto:abdelmalek.fathi.2001@gmail.com"><b>abdelmalek.fathi.2001@gmail.com</b></a></p>
 
 ###
 
@@ -25,6 +25,9 @@
   </a>
   <a href="https://www.facebook.com/fathi.abdelmalek.01/" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/facebook/default.svg" width="52" height="40" alt="facebook logo"  />
+  </a>
+  <a href="https://stackoverflow.com/users/12771383/fathi-abdelmalek" target="_blank">
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/stackoverflow/default.svg" width="52" height="40" alt="stackoverflow logo"  />
   </a>
   <a href="https://www.hackerrank.com/abdelmalek_fath1" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/hackerrank/default.svg" width="52" height="40" alt="hackerrank logo"  />
@@ -83,6 +86,8 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react logo"  />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" height="30" alt="redux logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gulp/gulp-plain.svg" height="30" alt="gulp logo"  />
 </div>
 
 ###
@@ -108,6 +113,8 @@
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="30" alt="postgresql logo"  />
   <img width="12" />
+  <img src="https://www.vectorlogo.zone/logos/mariadb/mariadb-icon.svg" height="30" alt="mariadb logo" />
+  <img with="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" height="30" alt="sqlite logo"  />
 </div>
 
@@ -121,6 +128,8 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" height="30" alt="numpy logo"  />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" height="30" alt="pandas logo"  />
+  <img width="12" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" height="30" alt="scikit-learn logo"/>
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" height="30" alt="tensorflow logo"  />
 </div>
@@ -138,6 +147,8 @@
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" height="30" alt="github logo"  />
   <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="30" alt="npm logo"  />
+  <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="30" alt="nodejs logo"  />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" height="30" alt="webpack logo"  />
@@ -146,9 +157,11 @@
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" height="30" alt="arduino logo"  />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="30" alt="npm logo"  />
-  <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qt/qt-original.svg" height="30" alt="qt logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" height="30" alt="figma logo"  />
+  <img width="12" />
+  <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" height="30" alt="postman logo"/>
 </div>
 
 ###
@@ -192,9 +205,5 @@
   <img src="https://streak-stats.demolab.com?user=fathiabdelmalek&locale=en&mode=daily&theme=transparent&hide_border=true&border_radius=5&order=3" height="220" alt="streak graph"  />
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=fathiabdelmalek&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=4&theme=transparent&hide_border=true&order=2" height="150" alt="languages graph"  />
 </div>
-
-###
-
-<img src="https://raw.githubusercontent.com/fathiabdelmalek/fathiabdelmalek/output/snake.svg" alt="Snake animation" />
 
 ###

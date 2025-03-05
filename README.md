@@ -24,7 +24,7 @@ Innovative Entrepreneur | Software Engineer | Web Developer<br><br>
   <a href="https://www.linkedin.com/in/fathi-abdelmalek/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="52" height="40" alt="Linkedin logo" />
   </a>
-  <a href="https://www.facebook.com/fathi.abdelmalek.01/" target="_blank">
+  <a href="https://www.facebook.com/profile.php?id=100062385619877" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" width="52" height="40" alt="Facebook logo" />
   </a>
   <a href="https://x.com/fathiabdelmale1" target="_blank">

@@ -11,11 +11,11 @@
 ###
 
 <p align="center">I'm Fathi Abdelmalek from Algeria<br>
-Innovative Entrepreneur | Software Engineer | Web Developer<br><br>
-- 🔭 I’m a Software Engineer and a Web Developer<br>
-- 📚 I'm a computer science student with a Master's degree<br>
-- ⚡ In my free time I work on <a href="https://github.com/passphera/cli.git"><b>passphera-cli</b></a><br>
-- 💬 Ask me about <b>python, web development, data structures and algorithms</b><br>
+Innovative Entrepreneur | PhD Student | Software Engineer<br><br>
+- 🔭 I’m a Software Engineer and a Web Developer.<br>
+- 📚 I'm a PhD student in AI field.<br>
+- ⚡ In my free time I'm <b><i>Freelancing</i></b>.<br>
+- 💬 Ask me anything about <b>python, web development, data structures and algorithms</b><br>
 - 📫 How to reach me <a href="mailto:abdelmalek.fathi.2001@gmail.com"><b>abdelmalek.fathi.2001@gmail.com</b></a></p>
 
 ###
@@ -225,7 +225,6 @@ Innovative Entrepreneur | Software Engineer | Web Developer<br><br>
   <img src="https://github-readme-stats.vercel.app/api?username=fathiabdelmalek&hide_title=true&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=transparent&locale=en&hide_border=true&order=1" height="250" alt="stats graph"  />
   <img src="https://streak-stats.demolab.com?user=fathiabdelmalek&locale=en&mode=daily&theme=transparent&hide_border=true&border_radius=5&order=3" height="220" alt="streak graph"  />
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=fathiabdelmalek&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=4&theme=transparent&hide_border=true&order=2" height="150" alt="languages graph"  />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=fathiabdelmalek&theme=github-dark" alt="activity graph"/>
 </div>
 
 ###
